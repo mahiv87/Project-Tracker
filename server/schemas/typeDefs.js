@@ -5,6 +5,7 @@ const typeDefs = gql`
 		_id: ID
 		email: String
 		password: String
+    projectCount: Int
 		savedProjects: [Project]
 	}
 
