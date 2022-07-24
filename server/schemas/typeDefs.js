@@ -10,16 +10,16 @@ const typeDefs = gql`
 
 	type Project {
 		projectId: Int
-		name: String
-		type: String
+		projectName: String
+		projectType: String
 		due: String
 		rate: Int
 	}
 
 	input inputProject {
 		projectId: Int
-		name: String
-		type: String
+		projectName: String
+		projectType: String
 		due: String
 		rate: Int
 	}
@@ -36,6 +36,8 @@ const typeDefs = gql`
 	type Mutation {
 		addUser(email: String!, password: String!): Auth
 		login(email: String!, password: String!): Auth
+    saveProject(project: inputProject!) User
+    removeProject(projectId: Int!): User
 	}
 `;
 
