@@ -1,0 +1,98 @@
+import React, { useState } from 'react';
+import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+
+const SignupForm = () => {
+	const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+	// const [showAlert, setShowAlert] = useState(false);
+	const [addUser] = useMutation(ADD_USER);
+
+	const handleInputChange = (event) => {
+		const { name, value } = event.target;
+		setUserFormData({ ...userFormData, [name]: value });
+	};
+
+	const handleFormSubmit = async (event) => {
+		event.preventDefault();
+
+		// check if form has everything (as per react-bootstrap docs)
+		// const form = event.currentTarget;
+		// if (form.checkValidity() === false) {
+		// 	event.preventDefault();
+		// 	event.stopPropagation();
+		// }
+
+		try {
+			const { data } = await addUser({
+				variables: { ...userFormData }
+			});
+
+			Auth.login(data.addUser.token);
+		} catch (err) {
+			console.error(err);
+			// setShowAlert(true);
+		}
+
+		setUserFormData({
+			email: '',
+			password: ''
+		});
+	};
+
+	return (
+		<>
+			{/* SIGNUP FORM */}
+			<form>
+				<div className="relative z-0 mb-6 w-full group">
+					<input
+						type="text"
+						name="email"
+						id="floating_email"
+						className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+						placeholder=" "
+						onChange={handleInputChange}
+						value={userFormData.email}
+						required
+					/>
+					<label
+						for="floating_email"
+						className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+					>
+						Email address
+					</label>
+				</div>
+				<div className="relative z-0 mb-6 w-full group">
+					<input
+						type="password"
+						name="password"
+						id="floating_password"
+						className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+						placeholder=" "
+						onChange={handleInputChange}
+						value={userFormData.password}
+						required
+					/>
+					<label
+						for="floating_password"
+						className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+					>
+						Password
+					</label>
+				</div>
+				<button
+					onSubmit={handleFormSubmit}
+					disabled={!(userFormData.email && userFormData.password)}
+					type="submit"
+					className="flex mx-auto p-0.5 mb-2  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+				>
+					<span className="justify-center px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+						Submit
+					</span>
+				</button>
+			</form>
+		</>
+	);
+};
+
+export default SignupForm;

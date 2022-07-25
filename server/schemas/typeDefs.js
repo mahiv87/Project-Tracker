@@ -5,7 +5,7 @@ const typeDefs = gql`
 		_id: ID
 		email: String
 		password: String
-    projectCount: Int
+		projectCount: Int
 		savedProjects: [Project]
 	}
 
@@ -37,8 +37,8 @@ const typeDefs = gql`
 	type Mutation {
 		addUser(email: String!, password: String!): Auth
 		login(email: String!, password: String!): Auth
-    saveProject(project: inputProject!) User
-    removeProject(projectId: Int!): User
+		saveProject(project: inputProject!): User
+		removeProject(projectId: Int!): User
 	}
 `;
 
