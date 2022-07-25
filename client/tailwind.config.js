@@ -2,7 +2,26 @@
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}', 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'],
 	theme: {
-		extend: {}
+		extend: {
+			fontFamily: {
+				thasadith: ['Thasadith']
+			},
+			animation: {
+				wiggle: 'wiggle 300ms ease-in-out 0s infinite',
+				fadeIn: 'fadeIn 1000ms ease-in-out 0s 1'
+			},
+			keyframes: {
+				wiggle: {
+					'0%, 100%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' }
+				},
+				fadeIn: {
+					'0%': { opacity: '0', transform: 'scale(1)' },
+					'80%': { opacity: '0.5', transform: 'scale(1.25)' },
+					'100%': { opacity: '1', transform: 'scale(1)' }
+				}
+			}
+		}
 	},
 	plugins: [require('flowbite/plugin')]
 };
