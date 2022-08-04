@@ -136,7 +136,7 @@ const SavedProjects = () => {
 					<div
 						className="modal fade custom-modal"
 						id="project-modal"
-						tabindex="-1"
+						tabIndex="-1"
 						role="dialog"
 						aria-labelledby="project-modal-form"
 						aria-hidden="true"
@@ -146,7 +146,7 @@ const SavedProjects = () => {
 								<form id="project-form">
 									<div className="modal-body">
 										<div className="relative z-0 mb-6 w-full group">
-											<label for="project-name-input">Project Name</label>
+											<label htmlFor="project-name-input">Project Name</label>
 											<input
 												name="projectName"
 												type="text"
@@ -159,14 +159,14 @@ const SavedProjects = () => {
 										</div>
 
 										<div className="relative z-0 mb-6 w-full group">
-											<label for="project-type-input">Project Type</label>
+											<label htmlFor="project-type-input">Project Type</label>
 											<select
 												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-white border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
 												id="project-type-input"
 												name="projectType"
 												onChange={handleChange}
 											>
-												<option selected disabled>
+												<option value="Pick one..." disabled>
 													Pick one...
 												</option>
 												<option value="Web Application (Front End)">
@@ -187,7 +187,7 @@ const SavedProjects = () => {
 										</div>
 
 										<div className="relative z-0 mb-6 w-full group">
-											<label for="hourly-rate-input">Hourly Rate ($)</label>
+											<label htmlFor="hourly-rate-input">Hourly Rate ($)</label>
 											<input
 												name="rate"
 												type="number"
@@ -201,7 +201,7 @@ const SavedProjects = () => {
 										</div>
 
 										<div className="relative z-0 mb-6 w-full group">
-											<label for="due-date-input">Due Date</label>
+											<label htmlFor="due-date-input">Due Date</label>
 											<input
 												name="due"
 												datepicker=""
