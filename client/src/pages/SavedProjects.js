@@ -53,7 +53,53 @@ const SavedProjects = () => {
 		setInterval(() => setCurrentTime(dayjs().format('MMM DD, YYYY [at] hh:mm:ss a')), 1000);
 	});
 
+	const { loading, data } = useQuery(GET_ME);
+
+	const userData = data?.me || {};
+
 	const [showModal, setShowModal] = useState(false);
+	const [projectName, setProjectName] = useState('');
+	const [projectType, setProjectType] = useState('');
+	const [hourlyRate, setHourlyRate] = useState(0);
+	const [dueDate, setDueDate] = useState('');
+
+	const [saveProject] = useMutation(SAVE_PROJECT);
+
+	const handleSaveProject = async (event) => {
+		event.preventDefault();
+
+		try {
+			const { data } = await saveProject({
+				variables: {
+					project: {
+						projectName,
+						projectType,
+						hourlyRate,
+						dueDate
+					}
+				}
+			});
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
+	const handleChange = (event) => {
+		const { name, value } = event.target;
+
+		if (name === 'projectName') {
+			setProjectName(value);
+		}
+		if (name === 'projectType') {
+			setProjectType(value);
+		}
+		if (name === 'rate') {
+			setHourlyRate(value);
+		}
+		if (name === 'due') {
+			setDueDate(value);
+		}
+	};
 
 	return (
 		<>
@@ -64,9 +110,9 @@ const SavedProjects = () => {
 			<div className="container w-fit mx-auto mt-6">
 				<button
 					onClick={() => setShowModal(true)}
-					class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-sm group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-purple-500 dark:focus:ring-purple-800"
+					className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-sm group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-purple-500 dark:focus:ring-purple-800"
 				>
-					<span class="relative px-5 py-1 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-sm group-hover:bg-opacity-0">
+					<span className="relative px-5 py-1 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-sm group-hover:bg-opacity-0">
 						Add Project
 					</span>
 				</button>
@@ -102,10 +148,12 @@ const SavedProjects = () => {
 										<div className="relative z-0 mb-6 w-full group">
 											<label for="project-name-input">Project Name</label>
 											<input
+												name="projectName"
 												type="text"
 												id="project-name-input"
 												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
 												placeholder="Enter the project's name"
+												onChange={handleChange}
 												required
 											/>
 										</div>
@@ -115,6 +163,8 @@ const SavedProjects = () => {
 											<select
 												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-white border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
 												id="project-type-input"
+												name="projectType"
+												onChange={handleChange}
 											>
 												<option selected disabled>
 													Pick one...
@@ -139,10 +189,12 @@ const SavedProjects = () => {
 										<div className="relative z-0 mb-6 w-full group">
 											<label for="hourly-rate-input">Hourly Rate ($)</label>
 											<input
+												name="rate"
 												type="number"
 												id="hourly-rate-input"
 												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
 												placeholder="$"
+												onChange={handleChange}
 												min="0"
 												required
 											/>
@@ -151,6 +203,7 @@ const SavedProjects = () => {
 										<div className="relative z-0 mb-6 w-full group">
 											<label for="due-date-input">Due Date</label>
 											<input
+												name="due"
 												datepicker=""
 												datepicker-autohide=""
 												type="text"
@@ -158,12 +211,14 @@ const SavedProjects = () => {
 												id="due-date-input"
 												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
 												placeholder="When is the project due?"
+												onChange={handleChange}
 												required
 											/>
 										</div>
 									</div>
 									<div className="modal-footer">
 										<button
+											onClick={() => handleSaveProject()}
 											type="submit"
 											className="flex mx-auto p-0.5 mb-2  overflow-hidden text-sm font-medium text-gray-900 rounded-sm group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
 										>
@@ -202,6 +257,16 @@ const SavedProjects = () => {
 									due={project.due}
 								/>
 							))}
+						{/* {userData.savedProjects.map((project) => {
+							return (
+								<ProjectComponent
+									name={project.projectName}
+									type={project.projectType}
+									rate={project.hourlyRate}
+									due={project.dueDate}
+								/>
+							);
+						})} */}
 					</Table.Body>
 				</Table>
 			</div>

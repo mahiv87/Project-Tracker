@@ -15,3 +15,17 @@ export const GET_ME = gql`
 		}
 	}
 `;
+
+export const GET_USER = gql`
+	query user {
+		email
+		projectCount
+		savedProjects {
+			projectId
+			projectName
+			projectType
+			due
+			rate
+		}
+	}
+`;

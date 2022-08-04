@@ -6,7 +6,7 @@ const typeDefs = gql`
 		email: String
 		password: String
 		projectCount: Int
-		savedProjects: [Project]
+		savedProjects: [Project]!
 	}
 
 	type Project {
@@ -26,11 +26,12 @@ const typeDefs = gql`
 	}
 
 	type Auth {
-		token: ID
+		token: ID!
 		user: User
 	}
 
 	type Query {
+		users: [User]
 		me: User
 	}
 

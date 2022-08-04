@@ -39,7 +39,7 @@ function App() {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/saved" element={<SavedProjects />} />
+						<Route path="/projects" element={<SavedProjects />} />
 						<Route path="*" element={<h1 className="display-2">Wrong page!</h1>} />
 					</Routes>
 					<Footer />

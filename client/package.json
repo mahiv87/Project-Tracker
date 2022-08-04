@@ -2,6 +2,7 @@
 	"name": "project-tracker",
 	"version": "0.1.0",
 	"private": true,
+	"proxy": "http://localhost:3001",
 	"dependencies": {
 		"@apollo/client": "^3.5.8",
 		"@headlessui/react": "^1.6.6",

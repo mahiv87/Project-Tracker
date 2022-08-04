@@ -11,6 +11,11 @@ const AppNavbar = () => {
 	const [showModal, setShowModal] = useState(false);
 	const [navbarOpen, setNavbarOpen] = useState(false);
 
+	const logout = (event) => {
+		event.preventDefault();
+		Auth.logout();
+	};
+
 	return (
 		<>
 			<nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-r from-indigo-500 via-cyan-500 to-green-500">
@@ -37,9 +42,9 @@ const AppNavbar = () => {
 					>
 						<ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
 							{Auth.loggedIn() ? (
-								<li className="nav-item">
+								<li className="nav-item flex wrop">
 									<Link
-										to="/saved"
+										to="/projects"
 										className="px-3 py-2 flex items-center text-sm font-bold leading-snug text-white hover:opacity-75"
 										onClick={function () {
 											setNavbarOpen(false);
@@ -49,12 +54,9 @@ const AppNavbar = () => {
 										<i className="fa-solid fa-terminal text-md leading-lg text-white opacity-75"></i>
 									</Link>
 									<Link
-										onClick={[
-											Auth.logout,
-											function () {
-												setNavbarOpen(false);
-											}
-										]}
+										to="/"
+										onClick={logout}
+										className="px-3 py-2 flex items-center text-sm font-bold leading-snug text-white hover:opacity-75"
 									>
 										Logout
 										<i className="fab fa-regular fa-user text-lg leading-lg text-white opacity-75"></i>
@@ -100,10 +102,10 @@ const AppNavbar = () => {
 
 					<Tabs.Group aria-label="Default tabs" style={'underline'}>
 						<Tabs.Item title="Login">
-							<LoginForm />
+							<LoginForm handleModalClose={() => setShowModal(false)} />
 						</Tabs.Item>
 						<Tabs.Item title="Signup">
-							<SignupForm />
+							<SignupForm handleModalClose={() => setShowModal(false)} />
 						</Tabs.Item>
 					</Tabs.Group>
 				</div>
