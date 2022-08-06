@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Auth from '../utils/auth';
 import { removeProjectId, saveProjectIds, getSavedProjectIds } from '../utils/localStorage';
 import { useMutation, useQuery } from '@apollo/client';
@@ -9,6 +10,7 @@ import ProjectComponent from '../components/ProjectComponent';
 import dayjs from 'dayjs';
 
 const SavedProjects = () => {
+	// const { email: userParams } = userParams();
 	const [currentTime, setCurrentTime] = useState(dayjs().format('MMM DD, YYYY [at] hh:mm:ss a'));
 
 	useEffect(() => {
@@ -42,6 +44,16 @@ const SavedProjects = () => {
 			const { data } = await saveProject({
 				variables: {
 					project: projectData
+				},
+				update(cache, { data: { saveProject } }) {
+					try {
+						cache.writeQuery({
+							query: GET_ME,
+							data: { me: saveProject }
+						});
+					} catch (err) {
+						console.error(err);
+					}
 				}
 			});
 		} catch (err) {
@@ -65,6 +77,14 @@ const SavedProjects = () => {
 			setDueDate(value);
 		}
 	};
+
+	if (!userData?.email) {
+		return (
+			<h1 className="container w-fit mx-auto mt-20 text-6xl font-thin">
+				You need to login to see the contents of this page
+			</h1>
+		);
+	}
 
 	return (
 		<>
@@ -194,6 +214,7 @@ const SavedProjects = () => {
 				</div>
 			</div>
 			{/* End Modal */}
+
 			<div className="container w-fit mx-auto mt-2">
 				{userData.savedProjects.length < 1 ? (
 					<h1 className="text-2xl italic opacity-70 font-thin">You have no projects</h1>

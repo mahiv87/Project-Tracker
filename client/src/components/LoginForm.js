@@ -61,23 +61,13 @@ const LoginForm = () => {
 						<span className="sr-only">Info</span>
 						<h3 className="text-lg font-medium text-red-700 dark:text-red-800">Invalid credentials</h3>
 					</div>
-					<div className="flex">
-						<button
-							type="button"
-							className="mx-auto text-red-700 bg-transparent border border-red-700 hover:bg-red-800 hover:text-white focus:ring-2 focus:outline-none focus:ring-red-300 font-medium rounded-sm text-xs px-3 py-1.5 text-center dark:border-red-800 dark:text-red-800 dark:hover:text-white"
-							data-dismiss-target="#alert-additional-content-2"
-							aria-label="Close"
-						>
-							Dismiss
-						</button>
-					</div>
 				</div>
 			)}
 
 			{/* LOGIN FORM */}
 			{data ? (
 				<p>
-					Success! You may now head <Link to="/">back to the homepage.</Link>
+					Success! You may now head <Link to="/projects"> to the Project page.</Link>
 				</p>
 			) : (
 				<form onSubmit={handleFormSubmit}>
