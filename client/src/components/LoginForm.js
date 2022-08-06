@@ -38,7 +38,7 @@ const LoginForm = () => {
 	return (
 		<>
 			{/* ALERT POPUP */}
-			{/* {error && (
+			{error && (
 				<div
 					id="alert-additional-content-2"
 					className="p-4 mb-4 bg-red-100 rounded-sm dark:bg-red-200"
@@ -72,7 +72,7 @@ const LoginForm = () => {
 						</button>
 					</div>
 				</div>
-			)} */}
+			)}
 
 			{/* LOGIN FORM */}
 			{data ? (

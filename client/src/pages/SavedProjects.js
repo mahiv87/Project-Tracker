@@ -3,49 +3,49 @@ import Auth from '../utils/auth';
 import { removeProjectId, saveProjectIds, getSavedProjectIds } from '../utils/localStorage';
 import { useMutation, useQuery } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
-import { SAVE_PROJECT, REMOVE_PROJECT } from '../utils/mutations';
+import { SAVE_PROJECT } from '../utils/mutations';
 import { Table } from 'flowbite-react';
 import ProjectComponent from '../components/ProjectComponent';
 import dayjs from 'dayjs';
 
 const SavedProjects = () => {
-	const projects = [
-		{
-			projectId: 1,
-			name: 'Coffee Shop',
-			type: 'Full Stack Web App',
-			rate: 34,
-			due: '9/9/99'
-		},
-		{
-			projectId: 2,
-			name: 'Coffee Shop',
-			type: 'Full Stack Web App',
-			rate: 34,
-			due: '9/9/99'
-		},
-		{
-			projectId: 3,
-			name: 'Coffee Shop',
-			type: 'Full Stack Web App',
-			rate: 34,
-			due: '9/9/99'
-		},
-		{
-			projectId: 4,
-			name: 'Coffee Shop',
-			type: 'Full Stack Web App',
-			rate: 34,
-			due: '9/9/99'
-		},
-		{
-			projectId: 5,
-			name: 'Coffee Shop',
-			type: 'Full Stack Web App',
-			rate: 34,
-			due: '9/9/99'
-		}
-	];
+	// const projects = [
+	// 	{
+	// 		projectId: 1,
+	// 		name: 'Coffee Shop',
+	// 		type: 'Full Stack Web App',
+	// 		rate: 34,
+	// 		due: '9/9/99'
+	// 	},
+	// 	{
+	// 		projectId: 2,
+	// 		name: 'Coffee Shop',
+	// 		type: 'Full Stack Web App',
+	// 		rate: 34,
+	// 		due: '9/9/99'
+	// 	},
+	// 	{
+	// 		projectId: 3,
+	// 		name: 'Coffee Shop',
+	// 		type: 'Full Stack Web App',
+	// 		rate: 34,
+	// 		due: '9/9/99'
+	// 	},
+	// 	{
+	// 		projectId: 4,
+	// 		name: 'Coffee Shop',
+	// 		type: 'Full Stack Web App',
+	// 		rate: 34,
+	// 		due: '9/9/99'
+	// 	},
+	// 	{
+	// 		projectId: 5,
+	// 		name: 'Coffee Shop',
+	// 		type: 'Full Stack Web App',
+	// 		rate: 34,
+	// 		due: '9/9/99'
+	// 	}
+	// ];
 
 	const [currentTime, setCurrentTime] = useState(dayjs().format('MMM DD, YYYY [at] hh:mm:ss a'));
 
@@ -232,6 +232,14 @@ const SavedProjects = () => {
 					</div>
 				</div>
 			</div>
+			{/* End Modal */}
+			<div className="container w-fit mx-auto mt-2">
+				{userData.savedProjects.length < 1 ? (
+					<h1 className="text-2xl italic opacity-70 font-thin">You have no projects</h1>
+				) : (
+					<div></div>
+				)}
+			</div>
 
 			<div className="container mx-auto mt-6">
 				<Table>
@@ -247,15 +255,6 @@ const SavedProjects = () => {
 						</Table.HeadCell>
 					</Table.Head>
 					<Table.Body className="divide-y">
-						{/* {projects &&
-							projects.map((project) => (
-								<ProjectComponent
-									name={project.name}
-									type={project.type}
-									rate={project.rate}
-									due={project.due}
-								/>
-							))} */}
 						{userData.savedProjects.map((project) => {
 							return (
 								<ProjectComponent
