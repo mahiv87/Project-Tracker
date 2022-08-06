@@ -1,10 +1,10 @@
 const { Schema } = require('mongoose');
 
 const projectSchema = new Schema({
-	projectId: {
-		type: Number,
-		required: true
-	},
+	// projectId: {
+	// 	type: Number,
+	// 	required: true
+	// },
 	projectName: {
 		type: String,
 		required: true

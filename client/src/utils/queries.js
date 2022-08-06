@@ -3,10 +3,11 @@ import { gql } from '@apollo/client';
 export const GET_ME = gql`
 	query me {
 		me {
+			_id
 			email
 			projectCount
 			savedProjects {
-				projectId
+				_id
 				projectName
 				projectType
 				due
@@ -18,10 +19,11 @@ export const GET_ME = gql`
 
 export const GET_USER = gql`
 	query user {
+		_id
 		email
 		projectCount
 		savedProjects {
-			projectId
+			_id
 			projectName
 			projectType
 			due

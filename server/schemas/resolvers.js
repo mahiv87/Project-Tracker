@@ -60,7 +60,7 @@ const resolvers = {
 				return User.findOneAndUpdate(
 					{ _id: context.user._id },
 					{
-						$pull: { savedProjects: { projectId: projectId } }
+						$pull: { savedProjects: { _id: projectId } }
 					},
 					{ new: true }
 				);

@@ -10,19 +10,19 @@ const typeDefs = gql`
 	}
 
 	type Project {
-		projectId: Int
+		_id: ID
 		projectName: String
 		projectType: String
 		due: String
-		rate: Int
+		rate: String
 	}
 
 	input inputProject {
-		projectId: Int
+		_id: ID
 		projectName: String
 		projectType: String
 		due: String
-		rate: Int
+		rate: String
 	}
 
 	type Auth {
@@ -39,7 +39,7 @@ const typeDefs = gql`
 		addUser(email: String!, password: String!): Auth
 		login(email: String!, password: String!): Auth
 		saveProject(project: inputProject!): User
-		removeProject(projectId: Int!): User
+		removeProject(projectId: ID!): User
 	}
 `;
 

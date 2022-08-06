@@ -56,6 +56,7 @@ const SavedProjects = () => {
 	const { loading, data } = useQuery(GET_ME);
 
 	const userData = data?.me || {};
+	// console.log(userData);
 
 	const [showModal, setShowModal] = useState(false);
 	const [projectName, setProjectName] = useState('');
@@ -68,15 +69,17 @@ const SavedProjects = () => {
 	const handleSaveProject = async (event) => {
 		event.preventDefault();
 
+		const projectData = {
+			projectName: projectName,
+			projectType: projectType,
+			due: dueDate,
+			rate: hourlyRate
+		};
+
 		try {
 			const { data } = await saveProject({
 				variables: {
-					project: {
-						projectName,
-						projectType,
-						hourlyRate,
-						dueDate
-					}
+					project: projectData
 				}
 			});
 		} catch (err) {
@@ -143,7 +146,7 @@ const SavedProjects = () => {
 					>
 						<div className="modal-dialog modal-lg modal-dialog-centered">
 							<div className="modal-content">
-								<form id="project-form">
+								<form onSubmit={handleSaveProject} id="project-form">
 									<div className="modal-body">
 										<div className="relative z-0 mb-6 w-full group">
 											<label htmlFor="project-name-input">Project Name</label>
@@ -179,10 +182,6 @@ const SavedProjects = () => {
 													Web Application (Full Stack)
 												</option>
 												<option value="Mobile Application">Mobile Application</option>
-												{/* <option value="Print Campaign">Print Campaign</option>
-												<option value="Digital Marketing Campaign">
-													Digital Marketing Campaign
-												</option> */}
 											</select>
 										</div>
 
@@ -207,7 +206,7 @@ const SavedProjects = () => {
 												datepicker=""
 												datepicker-autohide=""
 												type="text"
-												min="1"
+												// min="1"
 												id="due-date-input"
 												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
 												placeholder="When is the project due?"
@@ -218,7 +217,7 @@ const SavedProjects = () => {
 									</div>
 									<div className="modal-footer">
 										<button
-											onClick={() => handleSaveProject()}
+											// onClick={() => handleSaveProject()}
 											type="submit"
 											className="flex mx-auto p-0.5 mb-2  overflow-hidden text-sm font-medium text-gray-900 rounded-sm group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
 										>
@@ -248,7 +247,7 @@ const SavedProjects = () => {
 						</Table.HeadCell>
 					</Table.Head>
 					<Table.Body className="divide-y">
-						{projects &&
+						{/* {projects &&
 							projects.map((project) => (
 								<ProjectComponent
 									name={project.name}
@@ -256,17 +255,18 @@ const SavedProjects = () => {
 									rate={project.rate}
 									due={project.due}
 								/>
-							))}
-						{/* {userData.savedProjects.map((project) => {
+							))} */}
+						{userData.savedProjects.map((project) => {
 							return (
 								<ProjectComponent
+									_id={project._id}
 									name={project.projectName}
 									type={project.projectType}
-									rate={project.hourlyRate}
-									due={project.dueDate}
+									rate={project.rate}
+									due={project.due}
 								/>
 							);
-						})} */}
+						})}
 					</Table.Body>
 				</Table>
 			</div>

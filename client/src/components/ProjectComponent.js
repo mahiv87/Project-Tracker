@@ -7,6 +7,7 @@ import { GET_ME } from '../utils/queries';
 import { SAVE_PROJECT, REMOVE_PROJECT } from '../utils/mutations';
 
 export default function ProjectComponent(props) {
+	// console.log(props._id);
 	const { loading, data } = useQuery(GET_ME);
 	const [removeProject] = useMutation(REMOVE_PROJECT);
 
@@ -23,6 +24,7 @@ export default function ProjectComponent(props) {
 		if (!token) {
 			return false;
 		}
+		// console.log(projectId);
 
 		try {
 			await removeProject({
@@ -59,7 +61,7 @@ export default function ProjectComponent(props) {
 				<Table.Cell>$4080</Table.Cell> */}
 				<Table.Cell>
 					<button
-						onClick={handleRemoveProject}
+						onClick={() => handleRemoveProject(props._id)}
 						className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-sm group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"
 					>
 						<span className="relative px-5 py-1 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-sm group-hover:bg-opacity-0">

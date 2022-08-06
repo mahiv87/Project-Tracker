@@ -27,10 +27,11 @@ export const ADD_USER = gql`
 export const SAVE_PROJECT = gql`
 	mutation saveProject($project: inputProject!) {
 		saveProject(project: $project) {
+			_id
 			email
 			projectCount
 			savedProjects {
-				projectId
+				_id
 				projectName
 				projectType
 				due
@@ -41,12 +42,13 @@ export const SAVE_PROJECT = gql`
 `;
 
 export const REMOVE_PROJECT = gql`
-	mutation removeProject($projectId: Int!) {
+	mutation removeProject($projectId: ID!) {
 		removeProject(projectId: $projectId) {
+			_id
 			email
 			projectCount
 			savedProjects {
-				projectId
+				_id
 				projectName
 				projectType
 				due
