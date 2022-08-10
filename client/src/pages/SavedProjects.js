@@ -56,6 +56,8 @@ const SavedProjects = () => {
 					}
 				}
 			});
+
+			setShowModal(false);
 		} catch (err) {
 			console.error(err);
 		}
