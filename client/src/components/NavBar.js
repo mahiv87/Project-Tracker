@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SignupForm from './SignupForm';
 import LoginForm from './LoginForm';
 import { Tabs } from 'flowbite-react';
@@ -10,9 +10,11 @@ const AppNavbar = () => {
 	// SET MODAL DISPLAY STATE
 	const [showModal, setShowModal] = useState(false);
 	const [navbarOpen, setNavbarOpen] = useState(false);
+	const navigate = useNavigate();
 
 	const logout = (event) => {
 		event.preventDefault();
+		navigate('/', { replace: true });
 		Auth.logout();
 	};
 
