@@ -20,7 +20,7 @@ const AppNavbar = () => {
 
 	return (
 		<>
-			<nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-r from-indigo-500 via-cyan-500 to-green-500">
+			<nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-r from-indigo-500 via-cyan-500 to-green-500 dark:bg-gradient-to-r dark:from-purple-500 dark:to-pink-500">
 				<div className="container px-4 mx-auto flex flex-wrap items-center justify-between font-thasadith">
 					<div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
 						<p className="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-white">
@@ -38,7 +38,7 @@ const AppNavbar = () => {
 					<div
 						className={
 							navbarOpen
-								? 'absolute z-10 top-14 left-0 bg-gradient-to-r from-indigo-500 via-cyan-500 to-green-500 w-full flex'
+								? 'absolute z-10 top-14 left-0 bg-gradient-to-r from-indigo-500 via-cyan-500 to-green-500 dark:bg-gradient-to-r dark:from-purple-500 dark:to-pink-500 w-full flex'
 								: 'lg:flex flex-grow items-center hidden'
 						}
 					>
@@ -117,3 +117,6 @@ const AppNavbar = () => {
 };
 
 export default AppNavbar;
+
+// bg-gradient-to-r from-purple-500 to-pink-500 DARK
+// bg-gradient-to-r from-indigo-500 via-cyan-500 to-green-500 LIGHT
