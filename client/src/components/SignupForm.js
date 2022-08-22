@@ -40,7 +40,7 @@ const SignupForm = () => {
 			{/* SIGNUP FORM */}
 			<div>
 				{data ? (
-					<p>
+					<p className="dark:text-white">
 						Success! You may now head <Link to="/">back to the homepage.</Link>
 					</p>
 				) : (

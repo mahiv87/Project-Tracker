@@ -67,7 +67,7 @@ const LoginForm = () => {
 
 			{/* LOGIN FORM */}
 			{data ? (
-				<p>
+				<p className="dark:text-white">
 					Success! You may now head <Link to="/projects"> to the Project page.</Link>
 				</p>
 			) : (

@@ -117,7 +117,7 @@ const SavedProjects = () => {
 					{/* <!-- Modal content --> */}
 					<div className="flex justify-end">
 						<button className="" onClick={() => setShowModal(false)}>
-							<i className="fa-solid fa-xmark text-neutral-500 dark:text-white hover:text-purple-900"></i>
+							<i className="fa-solid fa-xmark text-neutral-500 dark:text-white hover:text-purple-900 dark:hover:text-indigo-500"></i>
 						</button>
 					</div>
 					<div
