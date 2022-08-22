@@ -90,7 +90,7 @@ const SavedProjects = () => {
 
 	return (
 		<>
-			<div className="w-screen h-24 bg-gradient-to-r from-indigo-500 via-cyan-500 to-green-500">
+			<div className="w-screen h-24 bg-gradient-to-r from-indigo-500 via-cyan-500 to-green-500 dark:from-purple-500 dark:to-pink-500">
 				<h1 className="text-center text-white font-bold text-2xl">Current Time &amp; Date:</h1>
 				<p className="text-center text-white">{currentTime}</p>
 			</div>
@@ -99,7 +99,7 @@ const SavedProjects = () => {
 					onClick={() => setShowModal(true)}
 					className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-sm group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-purple-500 dark:focus:ring-purple-800"
 				>
-					<span className="relative px-5 py-1 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-sm group-hover:bg-opacity-0">
+					<span className="relative px-5 py-1 transition-all ease-in duration-75 bg-white dark:bg-neutral-900 rounded-sm group-hover:bg-opacity-0">
 						Add Project
 					</span>
 				</button>
@@ -117,7 +117,7 @@ const SavedProjects = () => {
 					{/* <!-- Modal content --> */}
 					<div className="flex justify-end">
 						<button className="" onClick={() => setShowModal(false)}>
-							<i className="fa-solid fa-xmark text-neutral-500 hover:text-purple-900"></i>
+							<i className="fa-solid fa-xmark text-neutral-500 dark:text-white hover:text-purple-900"></i>
 						</button>
 					</div>
 					<div
@@ -132,7 +132,7 @@ const SavedProjects = () => {
 							<div className="modal-content">
 								<form onSubmit={handleSaveProject} id="project-form">
 									<div className="modal-body">
-										<div className="relative z-0 mb-6 w-full group">
+										<div className="relative z-0 mb-6 w-full group dark:text-white">
 											<label htmlFor="project-name-input">Project Name</label>
 											<input
 												name="projectName"
@@ -145,10 +145,10 @@ const SavedProjects = () => {
 											/>
 										</div>
 
-										<div className="relative z-0 mb-6 w-full group">
+										<div className="relative z-0 mb-6 w-full group dark:text-white">
 											<label htmlFor="project-type-input">Project Type</label>
 											<select
-												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-white border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-white dark:bg-neutral-800 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
 												id="project-type-input"
 												name="projectType"
 												onChange={handleChange}
@@ -169,7 +169,7 @@ const SavedProjects = () => {
 											</select>
 										</div>
 
-										<div className="relative z-0 mb-6 w-full group">
+										<div className="relative z-0 mb-6 w-full group dark:text-white">
 											<label htmlFor="hourly-rate-input">Hourly Rate ($)</label>
 											<input
 												name="rate"
@@ -183,7 +183,7 @@ const SavedProjects = () => {
 											/>
 										</div>
 
-										<div className="relative z-0 mb-6 w-full group">
+										<div className="relative z-0 mb-6 w-full group dark:text-white">
 											<label htmlFor="due-date-input">Due Date</label>
 											<input
 												name="due"
@@ -204,7 +204,7 @@ const SavedProjects = () => {
 											type="submit"
 											className="flex mx-auto p-0.5 mb-2  overflow-hidden text-sm font-medium text-gray-900 rounded-sm group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
 										>
-											<span className="justify-center px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-sm group-hover:bg-opacity-0">
+											<span className="justify-center px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-neutral-900 rounded-sm group-hover:bg-opacity-0">
 												Submit
 											</span>
 										</button>
