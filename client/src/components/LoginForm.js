@@ -5,7 +5,7 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const LoginForm = () => {
-	const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+	const [userFormData, setUserFormData] = useState({ email: 'demo@demo.com', password: 'password1' });
 	const [login, { error, data }] = useMutation(LOGIN_USER);
 	const navigate = useNavigate();
 
@@ -40,11 +40,7 @@ const LoginForm = () => {
 		<>
 			{/* ALERT POPUP */}
 			{error && (
-				<div
-					id="alert-additional-content-2"
-					className="p-4 mb-4 bg-red-100 rounded-sm dark:bg-red-200"
-					role="alert"
-				>
+				<div id="alert-additional-content-2" className="p-4 mb-4 bg-red-100 rounded-sm dark:bg-red-200" role="alert">
 					<div className="flex items-center justify-center mb-3">
 						<svg
 							aria-hidden="true"
