@@ -1,7 +1,8 @@
 import React from 'react';
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 import hero from '../images/software_engineer.svg';
 import secondary from '../images/futuristic_interface.svg';
+import waves from '../images/layered-waves.svg';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -16,6 +17,21 @@ const Home = () => {
 					</button>
 				</div>
 				<img src={hero} alt="" />
+			</section>
+			<section className={styles.wave}>
+				<img src={waves} alt="" />
+				{/* <svg
+					viewBox="0 0 500 150"
+					preserveAspectRatio="none"
+					height="100%"
+					width="100%"
+				>
+					<path
+						d="M0.00,49.98 C174.09,-87.31 306.71,109.05 500.84,-0.47 L500.00,150.00 L0.00,150.00 Z"
+						stroke="none"
+						fill="#fafafa"
+					></path>
+				</svg> */}
 			</section>
 			<section className={styles.info}>
 				<article>
