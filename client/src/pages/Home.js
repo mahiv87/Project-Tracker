@@ -47,9 +47,11 @@ const Home = () => {
 				<form>
 					<h3>Have questions?</h3>
 					<label>Name:</label>
-					<input type="text" name="name"></input>
+					<input type="text" name="name" />
 					<label>Email:</label>
-					<input type="text" name="email"></input>
+					<input type="text" name="email" />
+					<label>Message:</label>
+					<textarea />
 					<button type="submit">Submit</button>
 				</form>
 			</section>
