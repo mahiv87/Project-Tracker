@@ -20,19 +20,23 @@ const AppNavbar = () => {
 
 	return (
 		<>
-			<nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-r from-indigo-500 via-cyan-500 to-green-500 dark:from-purple-500 dark:to-pink-500">
+			<nav className="relative flex flex-wrap items-center justify-between px-2 py-3">
 				<div className="container px-4 mx-auto flex flex-wrap items-center justify-between font-thasadith">
 					<div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-						<p className="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-white">
+						{/* <p className="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-white">
 							<i className="fa-solid fa-code pr-2"></i>
 							Project Tracker
-						</p>
+						</p> */}
 						<button
 							className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
 							type="button"
 							onClick={() => setNavbarOpen(!navbarOpen)}
 						>
-							<i className={navbarOpen ? 'fa-solid fa-plus rotate-45' : 'fa-solid fa-plus'}></i>
+							<i
+								className={
+									navbarOpen ? 'fa-solid fa-plus rotate-45' : 'fa-solid fa-plus'
+								}
+							></i>
 						</button>
 					</div>
 					<div
@@ -74,10 +78,10 @@ const AppNavbar = () => {
 											setNavbarOpen(false);
 										}}
 									>
-										<span className="font-bold ml-2 px-2 transition-all duration-500 ease-in-out hover:tracking-widest">
+										<span className="login font-bold text-base text-blackText ml-2 p-2 bg-secondary rounded-full tracking-wide">
 											Login / Signup
+											{/* <i className="fab fa-regular fa-user text-lg leading-lg text-white opacity-75"></i> */}
 										</span>
-										<i className="fab fa-regular fa-user text-lg leading-lg text-white opacity-75"></i>
 									</Link>
 								</li>
 							)}

@@ -11,6 +11,7 @@ import SavedProjects from './pages/SavedProjects';
 import Navbar from './components/NavBar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import './app.css';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -41,7 +42,7 @@ function App() {
 		<ApolloProvider client={client}>
 			<Router>
 				<>
-					{/* <Navbar /> */}
+					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/projects" element={<SavedProjects />} />
