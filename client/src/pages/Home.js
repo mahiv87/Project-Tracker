@@ -44,7 +44,7 @@ const Home = () => {
 					</p>
 				</article>
 				<img src={secondary} alt="" />
-				<form>
+				{/* <form>
 					<h3>Have questions?</h3>
 					<label>Name:</label>
 					<input type="text" name="name" />
@@ -53,7 +53,7 @@ const Home = () => {
 					<label>Message:</label>
 					<textarea />
 					<button type="submit">Submit</button>
-				</form>
+				</form> */}
 			</section>
 		</>
 	);
