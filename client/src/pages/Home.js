@@ -34,6 +34,7 @@ const Home = () => {
 				</svg> */}
 			</section>
 			<section className={styles.info}>
+				<img src={secondary} alt="" />
 				<article>
 					<h3>Stay organized</h3>
 					<p>
@@ -43,7 +44,6 @@ const Home = () => {
 						efficitur.
 					</p>
 				</article>
-				<img src={secondary} alt="" />
 				{/* <form>
 					<h3>Have questions?</h3>
 					<label>Name:</label>
