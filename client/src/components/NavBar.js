@@ -94,11 +94,11 @@ const AppNavbar = () => {
 			<div
 				className={
 					showModal
-						? 'overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center flex backdrop-blur-lg'
+						? 'overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center flex backdrop-blur-2xl'
 						: 'hidden'
 				}
 			>
-				<div className="relative p-4 w-full max-w-md h-full md:h-auto">
+				<div className="relative p-4 w-full max-w-md h-full md:h-auto bg-white rounded-md drop-shadow-lg">
 					{/* <!-- Modal content --> */}
 					<div className="flex justify-end">
 						<button className="" onClick={() => setShowModal(false)}>
@@ -106,7 +106,7 @@ const AppNavbar = () => {
 						</button>
 					</div>
 
-					<Tabs.Group aria-label="Default tabs" style={'underline'}>
+					<Tabs.Group aria-label="Default tabs" style="underline">
 						<Tabs.Item title="Login">
 							<LoginForm handleModalClose={() => setShowModal(false)} />
 						</Tabs.Item>
