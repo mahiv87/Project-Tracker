@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import SignupForm from './SignupForm';
-import LoginForm from './LoginForm';
-import { Tabs } from 'flowbite-react';
+// import SignupForm from './SignupForm';
+// import LoginForm from './LoginForm';
+// import { Tabs } from 'flowbite-react';
 // import { TableIcon } from '@heroicons/react/outline';
+import BasicTabs from './TabsComponent';
 import Auth from '../utils/auth';
 
 const AppNavbar = () => {
@@ -78,7 +79,7 @@ const AppNavbar = () => {
 											setNavbarOpen(false);
 										}}
 									>
-										<span className="login font-bold text-base text-blackText ml-2 px-3 bg-secondary rounded-full tracking-wide">
+										<span className="login font-bold text-base text-offWhite ml-2 px-3 bg-secondary rounded-full tracking-wide">
 											Login
 											{/* <i className="fab fa-regular fa-user text-lg leading-lg text-white opacity-75"></i> */}
 										</span>
@@ -105,15 +106,16 @@ const AppNavbar = () => {
 							<i className="fa-solid fa-xmark text-neutral-500 dark:text-white hover:text-purple-900 dark:hover:text-indigo-500"></i>
 						</button>
 					</div>
+					<BasicTabs />
 
-					<Tabs.Group aria-label="Default tabs" style="underline">
+					{/* <Tabs.Group aria-label="Default tabs" style="underline">
 						<Tabs.Item title="Login">
 							<LoginForm handleModalClose={() => setShowModal(false)} />
 						</Tabs.Item>
 						<Tabs.Item title="Signup">
 							<SignupForm handleModalClose={() => setShowModal(false)} />
 						</Tabs.Item>
-					</Tabs.Group>
+					</Tabs.Group> */}
 				</div>
 			</div>
 		</>
