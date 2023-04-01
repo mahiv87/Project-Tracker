@@ -79,7 +79,7 @@ const AppNavbar = () => {
 											setNavbarOpen(false);
 										}}
 									>
-										<span className="login font-bold text-base text-offWhite ml-2 px-3 bg-secondary rounded-full tracking-wide">
+										<span className="login font-bold text-base text-blackText ml-2 px-3 bg-secondary rounded-full tracking-wide">
 											Login
 											{/* <i className="fab fa-regular fa-user text-lg leading-lg text-white opacity-75"></i> */}
 										</span>
