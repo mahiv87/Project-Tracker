@@ -11,7 +11,7 @@ import SavedProjects from './pages/SavedProjects';
 import Navbar from './components/NavBar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
-import './app.css';
+import './App.css';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
