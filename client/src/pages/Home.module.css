@@ -31,7 +31,7 @@
 	position: relative;
 	align-content: center;
 	flex-wrap: nowrap;
-	gap: 100;
+	gap: 100px;
 	border-radius: 0px 0px 0px 0px;
 }
 
@@ -50,7 +50,7 @@
 	padding: 0px 0px 0px 0px;
 	align-content: center;
 	flex-wrap: nowrap;
-	gap: 60;
+	gap: 60px;
 	border-radius: 0px 0px 0px 0px;
 }
 
@@ -69,7 +69,7 @@
 	padding: 0px 0px 0px 0px;
 	align-content: flex-start;
 	flex-wrap: nowrap;
-	gap: 20;
+	gap: 20px;
 	border-radius: 0px 0px 0px 0px;
 }
 
@@ -87,7 +87,7 @@
 	position: relative;
 	align-content: center;
 	flex-wrap: nowrap;
-	gap: 10;
+	gap: 10px;
 	border-radius: 100px;
 	border: 1px solid #06d6a0;
 }
@@ -142,9 +142,14 @@
 	position: relative;
 	align-content: center;
 	flex-wrap: nowrap;
-	gap: 10;
+	gap: 10px;
 	border-radius: 9999px;
 	cursor: pointer;
+}
+
+.tryButton:hover {
+	opacity: 0.9;
+	transition: all 500ms ease-out;
 }
 
 .tryButtonText {
