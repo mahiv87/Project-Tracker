@@ -365,28 +365,28 @@
 
 .companyOne {
 	flex-shrink: 0;
-	/* width: 136px; */
+	width: 136px;
 	height: 46px;
 	display: block;
 	overflow: hidden;
 	position: relative;
 	aspect-ratio: 2.9565217391304346 / 1;
 	background-image: url('../images/logoipsum-220.svg');
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 0px 0px 0px 0px;
 }
 .companyTwo {
 	flex-shrink: 0;
-	/* width: 136px; */
+	width: 136px;
 	height: 46px;
 	display: block;
 	overflow: hidden;
 	position: relative;
 	aspect-ratio: 2.9565217391304346 / 1;
 	background-image: url('../images/logoipsum-260.svg');
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 0px 0px 0px 0px;
@@ -394,14 +394,14 @@
 
 .companyThree {
 	flex-shrink: 0;
-	/* width: 136px; */
+	width: 136px;
 	height: 46px;
 	display: block;
 	overflow: hidden;
 	position: relative;
 	aspect-ratio: 2.9565217391304346 / 1;
 	background-image: url('../images/logoipsum-285.svg');
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 0px 0px 0px 0px;
@@ -409,14 +409,14 @@
 
 .companyFour {
 	flex-shrink: 0;
-	/* width: 136px; */
+	width: 136px;
 	height: 46px;
 	display: block;
 	overflow: hidden;
 	position: relative;
 	aspect-ratio: 2.9565217391304346 / 1;
 	background-image: url('../images/logoipsum-297.svg');
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 0px 0px 0px 0px;
