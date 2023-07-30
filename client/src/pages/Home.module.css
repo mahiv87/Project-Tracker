@@ -971,3 +971,79 @@
 	text-align: left;
 }
 /* END FAQS STYLES */
+
+/* BEGIN CONTACT SECTION */
+.contactContainer {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 100%;
+	height: min-content; /* 610px */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 100px 40px 100px 40px;
+	background-color: #ffffff;
+	overflow: hidden;
+	position: relative;
+	align-content: flex-start;
+	flex-wrap: nowrap;
+	gap: 60px;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.contactTitle {
+	flex-shrink: 0;
+	width: auto; /* 149px */
+	height: auto; /* 60px */
+	white-space: pre;
+	overflow: visible;
+	position: relative;
+	font-weight: 400;
+	font-style: normal;
+	font-family: 'Unica One', sans-serif;
+	color: var(--token-b9c3c957-2c66-49c4-9732-fa196fddac20, #001122);
+	font-size: 50px;
+	letter-spacing: -2.1px;
+	line-height: 1.2;
+	text-align: left;
+}
+
+.decorationsContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-end;
+	width: 100%;
+}
+
+.decorationOne {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 527px;
+	height: 277px;
+	display: block;
+	overflow: hidden;
+	opacity: 0.3;
+	transform: rotate(-124deg);
+	z-index: 0;
+	position: absolute;
+	border-radius: 100%;
+	border: 1px solid #000000;
+}
+
+.decorationTwo {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 527px;
+	height: 277px;
+	display: block;
+	overflow: hidden;
+	opacity: 0.3;
+	transform: rotate(-26deg);
+	z-index: 0;
+	position: absolute;
+	border-radius: 100%;
+	border: 1px solid #000000;
+}
+/* END CONTACT SECTION */

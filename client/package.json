@@ -7,6 +7,7 @@
 		"@apollo/client": "^3.5.8",
 		"@emotion/react": "^11.11.1",
 		"@emotion/styled": "^11.11.0",
+		"@formspark/use-formspark": "^0.1.39",
 		"@headlessui/react": "^1.6.6",
 		"@heroicons/react": "^1.0.6",
 		"@mui/icons-material": "^5.14.1",

@@ -53,8 +53,10 @@ const Home = () => {
 							your work in one place.
 						</h3>
 					</article>
+					<div className={styles.decorationsContainer}>
+						<div className={styles.infoDecoration}></div>
+					</div>
 				</article>
-				<div className={styles.infoDecoration}></div>
 			</section>
 			<section className={styles.testimonialsContainer}>
 				<div className={styles.testimonialsContent}>
@@ -155,6 +157,13 @@ const Home = () => {
 							needs without any financial burden
 						</p>
 					</div>
+				</div>
+			</section>
+			<section className={styles.contactContainer}>
+				<h2 className={styles.contactTitle}>Contact</h2>
+				<div className={styles.decorationsContainer}>
+					<div className={styles.decorationOne}></div>
+					<div className={styles.decorationTwo}></div>
 				</div>
 			</section>
 		</div>
