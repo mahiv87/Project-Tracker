@@ -19,7 +19,8 @@
 	box-sizing: border-box;
 	flex-shrink: 0;
 	width: 100%;
-	height: min-content; /* 670px */
+	height: calc(100vh - 64px);
+	/* height: min-content; 670px */
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
