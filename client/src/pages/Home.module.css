@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap');
 /* .desktop {
 	width: 1200px;
 	height: min-content;
@@ -15,11 +17,13 @@
 	border-radius: 0px 0px 0px 0px;
 } */
 
+/* BEGIN HERO STYLES */
 .hero {
 	box-sizing: border-box;
 	flex-shrink: 0;
 	width: 100%;
-	height: min-content; /* 670px */
+	height: calc(100vh - 64px);
+	/* height: min-content; 670px */
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -31,7 +35,7 @@
 	position: relative;
 	align-content: center;
 	flex-wrap: nowrap;
-	gap: 100;
+	gap: 100px;
 	border-radius: 0px 0px 0px 0px;
 }
 
@@ -50,7 +54,7 @@
 	padding: 0px 0px 0px 0px;
 	align-content: center;
 	flex-wrap: nowrap;
-	gap: 60;
+	gap: 60px;
 	border-radius: 0px 0px 0px 0px;
 }
 
@@ -69,7 +73,7 @@
 	padding: 0px 0px 0px 0px;
 	align-content: flex-start;
 	flex-wrap: nowrap;
-	gap: 20;
+	gap: 20px;
 	border-radius: 0px 0px 0px 0px;
 }
 
@@ -87,7 +91,7 @@
 	position: relative;
 	align-content: center;
 	flex-wrap: nowrap;
-	gap: 10;
+	gap: 10px;
 	border-radius: 100px;
 	border: 1px solid #06d6a0;
 }
@@ -142,9 +146,14 @@
 	position: relative;
 	align-content: center;
 	flex-wrap: nowrap;
-	gap: 10;
+	gap: 10px;
 	border-radius: 9999px;
 	cursor: pointer;
+}
+
+.tryButton:hover {
+	opacity: 0.9;
+	transition: all 500ms ease-out;
 }
 
 .tryButtonText {
@@ -297,3 +306,119 @@
 	background-position: center;
 	border-radius: 200px 200px 0px 200px;
 }
+/* END HERO STYLES */
+
+/* BEGIN TRUSTED SECTION STYLES */
+.trustedContainer {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 100%;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 100px 40px 100px 40px;
+	background-color: #ffffff;
+	overflow: hidden;
+	position: relative;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 15px;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.trustedBy {
+	flex-shrink: 0;
+	width: auto; /* 200px */
+	height: auto; /* 60px */
+	white-space: pre;
+	overflow: visible;
+	position: relative;
+	font-weight: 400;
+	font-style: normal;
+	font-family: 'Unica One', sans-serif;
+	color: var(--token-b9c3c957-2c66-49c4-9732-fa196fddac20, #001122);
+	font-size: 50px;
+	letter-spacing: -2.1px;
+	line-height: 1.2;
+	text-align: left;
+}
+
+.companiesContainer {
+	flex-shrink: 0;
+	width: 1000px;
+	height: min-content; /* 46px */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+	overflow: visible;
+	position: relative;
+	padding: 0px 0px 0px 0px;
+	align-content: center;
+	flex-wrap: wrap;
+	gap: 60px;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.companyOne {
+	flex-shrink: 0;
+	/* width: 136px; */
+	height: 46px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	aspect-ratio: 2.9565217391304346 / 1;
+	background-image: url('../images/logoipsum-220.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 0px 0px 0px 0px;
+}
+.companyTwo {
+	flex-shrink: 0;
+	/* width: 136px; */
+	height: 46px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	aspect-ratio: 2.9565217391304346 / 1;
+	background-image: url('../images/logoipsum-260.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.companyThree {
+	flex-shrink: 0;
+	/* width: 136px; */
+	height: 46px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	aspect-ratio: 2.9565217391304346 / 1;
+	background-image: url('../images/logoipsum-285.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.companyFour {
+	flex-shrink: 0;
+	/* width: 136px; */
+	height: 46px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	aspect-ratio: 2.9565217391304346 / 1;
+	background-image: url('../images/logoipsum-297.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 0px 0px 0px 0px;
+}
+/* END TRUSTED SECTION STYLES */

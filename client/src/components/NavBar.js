@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 // import { TableIcon } from '@heroicons/react/outline';
 import BasicTabs from './TabsComponent';
 import Auth from '../utils/auth';
+import styles from './NavBar.module.css';
 
 const AppNavbar = () => {
 	// SET MODAL DISPLAY STATE
@@ -21,8 +22,8 @@ const AppNavbar = () => {
 
 	return (
 		<>
-			<nav className="relative flex flex-wrap items-center justify-between px-2 py-3">
-				<div className="container px-4 mx-auto flex flex-wrap items-center justify-between font-thasadith">
+			<nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-primary">
+				<div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
 					<div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
 						{/* <p className="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-white">
 							<i className="fa-solid fa-code pr-2"></i>
@@ -43,7 +44,7 @@ const AppNavbar = () => {
 					<div
 						className={
 							navbarOpen
-								? 'absolute z-10 top-14 left-0 bg-gradient-to-r from-indigo-500 via-cyan-500 to-green-500 dark:from-purple-500 dark:to-pink-500 w-full flex'
+								? 'absolute z-10 top-14 left-0 bg-primary w-full flex'
 								: 'lg:flex flex-grow items-center hidden'
 						}
 					>
@@ -70,21 +71,26 @@ const AppNavbar = () => {
 									</Link>
 								</li>
 							) : (
-								<li className="nav-item">
-									<Link
-										to="/"
-										className="px-3 py-2 flex items-center text-sm leading-snug text-white "
-										onClick={function () {
-											setShowModal(true);
-											setNavbarOpen(false);
-										}}
-									>
-										<span className="login font-bold text-base text-blackText ml-2 px-3 bg-secondary rounded-full tracking-wide">
-											Login
-											{/* <i className="fab fa-regular fa-user text-lg leading-lg text-white opacity-75"></i> */}
-										</span>
-									</Link>
-								</li>
+								<div className={styles.linksContainer}>
+									<li className={styles.contactLink}>
+										<p>Contact</p>
+									</li>
+									<li className="nav-item">
+										<Link
+											to="/"
+											className={styles.loginButton}
+											onClick={function () {
+												setShowModal(true);
+												setNavbarOpen(false);
+											}}
+										>
+											<span className={styles.loginText}>
+												Login
+												{/* <i className="fab fa-regular fa-user text-lg leading-lg text-white opacity-75"></i> */}
+											</span>
+										</Link>
+									</li>
+								</div>
 							)}
 						</ul>
 					</div>
@@ -107,7 +113,7 @@ const AppNavbar = () => {
 						</button>
 					</div>
 					<BasicTabs />
-
+					{/* 
 					<Tabs.Group aria-label="Default tabs" style="underline">
 						<Tabs.Item title="Login" id="login">
 
