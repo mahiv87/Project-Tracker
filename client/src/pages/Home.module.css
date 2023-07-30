@@ -144,6 +144,7 @@
 	flex-wrap: nowrap;
 	gap: 10;
 	border-radius: 9999px;
+	cursor: pointer;
 }
 
 .tryButtonText {
@@ -175,14 +176,13 @@
 	justify-content: center;
 	grid-auto-rows: min-content;
 	grid-template-rows: repeat(2, min-content);
-	padding: 0px 0px 0px 0px;
-	gap: 20;
-	border-radius: 0px 0px 0px 0px;
+	padding: 0px;
+	gap: 20px;
 }
 
 .blobTopLeft {
 	flex-shrink: 0;
-	width: 396px;
+	/* width: 396px; */
 	height: 143px;
 	display: block;
 	background-color: #ef476f;
@@ -192,7 +192,7 @@
 	justify-self: start;
 	align-self: start;
 	aspect-ratio: 2.1433566433566433 / 1;
-	border-radius: 0px 200px 200px 0px;
+	border-radius: 0px 200px 0px 200px;
 }
 
 .imgTopRight {
@@ -211,7 +211,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 200px 200px 200px 0px;
+	border-radius: 200px 200px 0px 200px;
 }
 
 .imgCenterLeft {
@@ -231,4 +231,69 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 0px 200px 200px 200px;
+}
+
+.blobCenter {
+	flex-shrink: 0;
+	height: 144px;
+	display: block;
+	background-color: #ef476f;
+	overflow: hidden;
+	position: relative;
+	justify-self: start;
+	align-self: start;
+	aspect-ratio: 1 / 1;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.imgCenterRight {
+	flex-shrink: 0;
+	height: 144px;
+	display: block;
+	/* -webkit-filter: grayscale(1); */
+	/* filter: grayscale(1); */
+	/* mix-blend-mode: luminosity; */
+	overflow: hidden;
+	position: relative;
+	justify-self: start;
+	align-self: start;
+	aspect-ratio: 1 / 1;
+	background-image: url('../images/james-harrison.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 0px 0px 0px 200px;
+}
+
+.blobBottomLeft {
+	flex-shrink: 0;
+	height: 144px;
+	display: block;
+	background-color: #ef476f;
+	overflow: hidden;
+	position: relative;
+	justify-self: start;
+	align-self: start;
+	aspect-ratio: 1 / 1;
+	border-radius: 100%;
+}
+
+.imgBottomRight {
+	flex-shrink: 0;
+	height: 144px;
+	display: block;
+	/* -webkit-filter: grayscale(1); */
+	/* filter: grayscale(1); */
+	/* mix-blend-mode: luminosity; */
+	overflow: hidden;
+	position: relative;
+	grid-column: auto / span 2;
+	justify-self: start;
+	align-self: start;
+	aspect-ratio: 2.1358885017421603 / 1;
+	background-image: url('../images/desola-lanre-ologun.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 200px 200px 0px 200px;
 }

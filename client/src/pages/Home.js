@@ -21,6 +21,10 @@ const Home = () => {
 						<div className={styles.blobTopLeft}></div>
 						<div className={styles.imgTopRight}></div>
 						<div className={styles.imgCenterLeft}></div>
+						<div className={styles.blobCenter}></div>
+						<div className={styles.imgCenterRight}></div>
+						<div className={styles.blobBottomLeft}></div>
+						<div className={styles.imgBottomRight}></div>
 					</div>
 				</div>
 			</section>
