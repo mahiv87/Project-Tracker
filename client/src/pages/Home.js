@@ -37,6 +37,19 @@ const Home = () => {
 					<div className={styles.companyFour}></div>
 				</div>
 			</section>
+			<section className={styles.infoContainer}>
+				<article className={styles.infoContent}>
+					<h2 className={styles.infoHeading}>Discover a new workflow</h2>
+					<article className={styles.paragraphContainer}>
+						<h3 className={styles.paragraphText}>
+							Introducing Project Tracker, the ultimate solution for developers
+							to keep their projects in check. Organize, track, and manage all
+							your work in one place.
+						</h3>
+					</article>
+					<div className={styles.infoDecoration}></div>
+				</article>
+			</section>
 		</div>
 	);
 };
