@@ -1,6 +1,11 @@
 import React from 'react';
 // import Auth from '../utils/auth';
-import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import {
+	CheckCircle,
+	Devices,
+	FormatQuote,
+	SettingsBrightness
+} from '@mui/icons-material';
 
 import styles from './Home.module.css';
 
@@ -55,23 +60,76 @@ const Home = () => {
 				<div className={styles.testimonialsContent}>
 					<article className={styles.testimonialsCardLeft}>
 						<p className={styles.testimonialsText}>
-							<FormatQuoteIcon />
+							<FormatQuote />
 							Project Tracker revolutionized the way our team manages multile
 							projects. It's easy to use and provides the right set of
 							functionalities
-							<FormatQuoteIcon />
+							<FormatQuote />
 						</p>
 						<p className={styles.testimonialsClient}>Very Large Tech Firm</p>
 					</article>
 					<article className={styles.testimonialsCardRight}>
 						<p className={styles.testimonialsText}>
-							<FormatQuoteIcon />
+							<FormatQuote />
 							Our workflow has improved dramatically with Project Tracker. It's
 							become an essential tool for our development team
-							<FormatQuoteIcon />
+							<FormatQuote />
 						</p>
 						<p className={styles.testimonialsClient}>Startup Coders</p>
 					</article>
+				</div>
+			</section>
+			<section className={styles.featuresContainer}>
+				<div className={styles.featuresHeading}>
+					<p className={styles.featuresTitle}>
+						Manage your projects stress free
+					</p>
+					<p className={styles.featuresSubtitle}>
+						Project Tracker helps you manage your projects throughout the day
+					</p>
+				</div>
+				<div className={styles.featureCardContainer}>
+					<div className={styles.featureCard}>
+						<div className={styles.featureCardContent}>
+							<div className={styles.featureCardMain}>
+								<div className={styles.featureCardHeading}>
+									<Devices sx={{ color: '#ef476f', fontSize: 40 }} />
+									<h3 className={styles.featureCardTitle}>For every device</h3>
+								</div>
+								<p className={styles.featureCardText}>
+									Project Tracker works seamlessly across your Windows, iOS, and
+									Android
+								</p>
+							</div>
+						</div>
+					</div>
+					<div className={styles.featureCard}>
+						<div className={styles.featureCardContent}>
+							<div className={styles.featureCardMain}>
+								<div className={styles.featureCardHeading}>
+									<SettingsBrightness sx={{ color: '#ef476f', fontSize: 40 }} />
+									<h3 className={styles.featureCardTitle}>Light & Dark</h3>
+								</div>
+								<p className={styles.featureCardText}>
+									Some prefer dark. Some prefer light. Whatever style you like,
+									it's your choice
+								</p>
+							</div>
+						</div>
+					</div>
+					<div className={styles.featureCard}>
+						<div className={styles.featureCardContent}>
+							<div className={styles.featureCardMain}>
+								<div className={styles.featureCardHeading}>
+									<CheckCircle sx={{ color: '#ef476f', fontSize: 40 }} />
+									<h3 className={styles.featureCardTitle}>Complete Tasks</h3>
+								</div>
+								<p className={styles.featureCardText}>
+									Focus on what currently matters
+								</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
