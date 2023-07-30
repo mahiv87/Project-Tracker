@@ -107,10 +107,10 @@ const AppNavbar = () => {
 					</div>
 
 					<Tabs.Group aria-label="Default tabs" style="underline">
-						<Tabs.Item title="Login">
+						<Tabs.Item title="Login" id="login">
 							<LoginForm handleModalClose={() => setShowModal(false)} />
 						</Tabs.Item>
-						<Tabs.Item title="Signup">
+						<Tabs.Item title="Signup" id="signup">
 							<SignupForm handleModalClose={() => setShowModal(false)} />
 						</Tabs.Item>
 					</Tabs.Group>
