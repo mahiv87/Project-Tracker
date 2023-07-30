@@ -132,7 +132,31 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
-			<section className={styles.faqContainer}></section>
+			<section className={styles.faqContainer}>
+				<h2 className={styles.faqHeading}>Frequently Asked Questions</h2>
+				<div className={styles.faqQuestionsContainer}>
+					<div className={styles.faqQuestion}>
+						<h2 className={styles.faqQuestionTitle}>
+							How secure is Project Tracker?
+						</h2>
+						<p className={styles.faqQuestionText}>
+							Rest assured, Project Tracker employs state-of-the-art security
+							measures to protect your data.
+						</p>
+					</div>
+					<div className={styles.faqQuestion}>
+						<h2 className={styles.faqQuestionTitle}>
+							What are your fees and how are they charged?
+						</h2>
+						<p className={styles.faqQuestionText}>
+							As a free software service, we don't charge any fees for our
+							services. We are committed to providing our software at no cost to
+							our users. Our goal is to offer valuable tools to support your
+							needs without any financial burden
+						</p>
+					</div>
+				</div>
+			</section>
 		</div>
 	);
 };
