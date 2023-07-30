@@ -7,8 +7,8 @@ const Home = () => {
 	return (
 		<div className={styles.desktop}>
 			<section className={styles.hero}>
-				<div className={styles.container}>
-					<div className={styles.contentLeft}>
+				<main className={styles.container}>
+					<article className={styles.contentLeft}>
 						<div className={styles.logoContainer}>
 							<p className={styles.projectTracker}>Project Tracker</p>
 						</div>
@@ -16,8 +16,8 @@ const Home = () => {
 						<div className={styles.tryButton}>
 							<p className={styles.tryButtonText}>Try it now</p>
 						</div>
-					</div>
-					<div className={styles.contentRight}>
+					</article>
+					<article className={styles.contentRight}>
 						<div className={styles.blobTopLeft}></div>
 						<div className={styles.imgTopRight}></div>
 						<div className={styles.imgCenterLeft}></div>
@@ -25,7 +25,16 @@ const Home = () => {
 						<div className={styles.imgCenterRight}></div>
 						<div className={styles.blobBottomLeft}></div>
 						<div className={styles.imgBottomRight}></div>
-					</div>
+					</article>
+				</main>
+			</section>
+			<section className={styles.trustedContainer}>
+				<h2 className={styles.trustedBy}>Trusted By</h2>
+				<div className={styles.companiesContainer}>
+					<div className={styles.companyOne}></div>
+					<div className={styles.companyTwo}></div>
+					<div className={styles.companyThree}></div>
+					<div className={styles.companyFour}></div>
 				</div>
 			</section>
 		</div>
