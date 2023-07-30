@@ -874,4 +874,100 @@
 	gap: 40px;
 	border-radius: 0px;
 }
+
+.faqHeading {
+	flex-shrink: 0;
+	width: 100%;
+	height: auto; /* 58px */
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	word-break: break-word;
+	max-width: 1000px;
+	overflow: visible;
+	position: relative;
+	font-weight: 400;
+	font-style: normal;
+	font-family: 'Unica One', sans-serif;
+	color: #000000;
+	font-size: 48px;
+	letter-spacing: 0em;
+	line-height: 1.2;
+	text-align: center;
+}
+
+.faqQuestionsContainer {
+	flex-shrink: 0;
+	width: 100%;
+	height: min-content; /* 88px */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	max-width: 1000px;
+	overflow: hidden;
+	position: relative;
+	padding: 0px;
+	align-content: flex-start;
+	flex-wrap: nowrap;
+	gap: 100px;
+	border-radius: 0px;
+}
+
+.faqQuestion {
+	flex-shrink: 0;
+	flex: 1 0 0px;
+	width: 1px;
+	height: min-content; /* 88px */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	max-width: 100%;
+	overflow: visible;
+	position: relative;
+	padding: 0px;
+	align-content: flex-start;
+	flex-wrap: nowrap;
+	gap: 10px;
+	border-radius: 0px;
+}
+
+.faqQuestionTitle {
+	flex-shrink: 0;
+	width: 100%;
+	height: auto; /* 30px */
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	word-break: break-word;
+	overflow: visible;
+	position: relative;
+	font-weight: 700;
+	font-style: normal;
+	font-family: 'Manrope', 'Manrope Placeholder', sans-serif;
+	color: #000000;
+	font-size: 20px;
+	letter-spacing: -0.025em;
+	line-height: 1.5;
+	text-align: left;
+}
+
+.faqQuestionText {
+	flex-shrink: 0;
+	width: 100%;
+	height: auto; /* 48px */
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	word-break: break-word;
+	max-width: 400px;
+	overflow: visible;
+	position: relative;
+	font-weight: 500;
+	font-style: normal;
+	font-family: 'Manrope', sans-serif;
+	color: #000000;
+	font-size: 16px;
+	letter-spacing: 0em;
+	line-height: 1.5;
+	text-align: left;
+}
 /* END FAQS STYLES */
