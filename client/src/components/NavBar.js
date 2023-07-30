@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import SignupForm from './SignupForm';
-import LoginForm from './LoginForm';
-import { Tabs } from 'flowbite-react';
+// import SignupForm from './SignupForm';
+// import LoginForm from './LoginForm';
+// import { Tabs } from 'flowbite-react';
 // import { TableIcon } from '@heroicons/react/outline';
+import BasicTabs from './TabsComponent';
 import Auth from '../utils/auth';
 import styles from './NavBar.module.css';
 
@@ -111,15 +112,17 @@ const AppNavbar = () => {
 							<i className="fa-solid fa-xmark text-neutral-500 dark:text-white hover:text-purple-900 dark:hover:text-indigo-500"></i>
 						</button>
 					</div>
+					<BasicTabs />
 
 					<Tabs.Group aria-label="Default tabs" style="underline">
 						<Tabs.Item title="Login" id="login">
+
 							<LoginForm handleModalClose={() => setShowModal(false)} />
 						</Tabs.Item>
 						<Tabs.Item title="Signup" id="signup">
 							<SignupForm handleModalClose={() => setShowModal(false)} />
 						</Tabs.Item>
-					</Tabs.Group>
+					</Tabs.Group> */}
 				</div>
 			</div>
 		</>
