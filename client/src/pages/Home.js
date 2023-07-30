@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import Auth from '../utils/auth';
+import { useFormspark } from '@formspark/use-formspark';
 import {
 	CheckCircle,
 	Devices,
@@ -9,7 +10,21 @@ import {
 
 import styles from './Home.module.css';
 
+const FORM_ID = process.env.REACT_APP_FORMSPARK_FORM_ID;
+
 const Home = () => {
+	const [submit, submitting] = useFormspark({
+		formId: FORM_ID
+	});
+
+	const [message, setMessage] = useState('');
+
+	const onFormSubmit = async (e) => {
+		e.preventDefault();
+		await submit({ message });
+		alert('Form submitted');
+	};
+
 	return (
 		<div className={styles.homeContainer}>
 			<section className={styles.hero}>
@@ -161,6 +176,37 @@ const Home = () => {
 			</section>
 			<section className={styles.contactContainer}>
 				<h2 className={styles.contactTitle}>Contact</h2>
+				<form onSubmit={onFormSubmit} className={styles.formContainer}>
+					<div className={styles.formInputs}>
+						<input
+							className={styles.formInput}
+							id="name"
+							name="name"
+							type="text"
+							placeholder="Name"
+						/>
+						<input
+							className={styles.formInput}
+							id="email"
+							name="email"
+							type="text"
+							placeholder="Email"
+						/>
+					</div>
+					<textarea
+						className={styles.formMessage}
+						placeholder="Message"
+						value={message}
+						onChange={(e) => setMessage(e.target.value)}
+					/>
+					<button
+						className={styles.formButton}
+						type="submit"
+						disabled={submitting}
+					>
+						Send
+					</button>
+				</form>
 				<div className={styles.decorationsContainer}>
 					<div className={styles.decorationOne}></div>
 					<div className={styles.decorationTwo}></div>
