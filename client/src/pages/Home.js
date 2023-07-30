@@ -1,11 +1,12 @@
 import React from 'react';
 // import Auth from '../utils/auth';
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 import styles from './Home.module.css';
 
 const Home = () => {
 	return (
-		<div className={styles.desktop}>
+		<div className={styles.homeContainer}>
 			<section className={styles.hero}>
 				<main className={styles.container}>
 					<article className={styles.contentLeft}>
@@ -47,8 +48,31 @@ const Home = () => {
 							your work in one place.
 						</h3>
 					</article>
-					<div className={styles.infoDecoration}></div>
 				</article>
+				<div className={styles.infoDecoration}></div>
+			</section>
+			<section className={styles.testimonialsContainer}>
+				<div className={styles.testimonialsContent}>
+					<article className={styles.testimonialsCardLeft}>
+						<p className={styles.testimonialsText}>
+							<FormatQuoteIcon />
+							Project Tracker revolutionized the way our team manages multile
+							projects. It's easy to use and provides the right set of
+							functionalities
+							<FormatQuoteIcon />
+						</p>
+						<p className={styles.testimonialsClient}>Very Large Tech Firm</p>
+					</article>
+					<article className={styles.testimonialsCardRight}>
+						<p className={styles.testimonialsText}>
+							<FormatQuoteIcon />
+							Our workflow has improved dramatically with Project Tracker. It's
+							become an essential tool for our development team
+							<FormatQuoteIcon />
+						</p>
+						<p className={styles.testimonialsClient}>Startup Coders</p>
+					</article>
+				</div>
 			</section>
 		</div>
 	);
