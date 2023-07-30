@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap');
-/* .desktop {
-	width: 1200px;
+.homeContainer {
+	width: 100%;
 	height: min-content;
 	display: flex;
 	flex-direction: column;
@@ -9,13 +9,13 @@
 	align-items: center;
 	background-color: #ffffff;
 	overflow: hidden;
-	padding: 0px 0px 0px 0px;
+	padding: 0px;
 	align-content: center;
 	flex-wrap: nowrap;
-	gap: 0;
+	gap: 0px;
 	position: absolute;
-	border-radius: 0px 0px 0px 0px;
-} */
+	border-radius: 0px;
+}
 
 /* BEGIN HERO STYLES */
 .hero {
@@ -433,14 +433,14 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	padding: 100px 100px 100px 100px;
+	padding: 100px;
 	background-color: #ffffff;
 	overflow: visible;
 	position: relative;
-	align-content: center;
+	/* align-content: center; */
 	flex-wrap: nowrap;
-	gap: 0px;
-	border-radius: 0px 0px 0px 0px;
+	gap: 20px;
+	border-radius: 0px;
 }
 
 .infoContent {
@@ -455,11 +455,11 @@
 	overflow: visible;
 	z-index: 1;
 	position: relative;
-	padding: 0px 0px 0px 0px;
-	align-content: flex-start;
+	padding: 0px;
+	/* align-content: flex-start; */
 	flex-wrap: nowrap;
 	gap: 40px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .infoHeading {
@@ -495,7 +495,7 @@
 	z-index: 1;
 	position: relative;
 	padding: 0px 0px 0px 0px;
-	align-content: center;
+	/* align-content: center; */
 	flex-wrap: nowrap;
 	gap: 40px;
 	border-radius: 0px 0px 0px 0px;
@@ -534,4 +534,122 @@
 	border-radius: 100%;
 	border: 1px solid #000000;
 }
-/* END INFOR SECTION STYLES */
+/* END INFO SECTION STYLES */
+
+/* BEGIN TESTIMONIALS STYLES */
+.testimonialsContainer {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 100%;
+	height: min-content; /* 700px */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 200px;
+	background-color: #ffffff;
+	overflow: hidden;
+	position: relative;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 0px;
+	border-radius: 0px;
+}
+
+.testimonialsContent {
+	flex-shrink: 0;
+	width: 100%;
+	height: min-content; /* 500px */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	max-width: 1000px;
+	overflow: hidden;
+	position: relative;
+	padding: 0px 0px 0px 0px;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 20px;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.testimonialsCardLeft {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	flex: 1 0 0px;
+	width: 1px;
+	height: min-content; /* 500px */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 40px 40px 40px 40px;
+	background-color: #f2f2f2;
+	min-height: 500px;
+	overflow: hidden;
+	position: relative;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 40px;
+	border-radius: 40px 200px 200px 200px;
+}
+
+.testimonialsText {
+	flex-shrink: 0;
+	width: 100%;
+	height: auto; /* 96px */
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	word-break: break-word;
+	overflow: visible;
+	position: relative;
+	font-weight: 700;
+	font-style: normal;
+	font-family: 'Manrope', 'Manrope Placeholder', sans-serif;
+	color: #073b4c;
+	font-size: 20px;
+	letter-spacing: -0.025em;
+	line-height: 1.2;
+	text-align: center;
+}
+
+.testimonialsClient {
+	flex-shrink: 0;
+	width: auto; /* 68px */
+	height: auto; /* 24px */
+	white-space: pre;
+	overflow: visible;
+	position: relative;
+	/* font-weight: 500; */
+	font-style: normal;
+	font-family: 'Manrope', sans-serif;
+	color: #000000;
+	font-size: 16px;
+	letter-spacing: 0em;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.testimonialsCardRight {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	flex: 1 0 0px;
+	width: 1px;
+	height: min-content; /* 500px */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 40px 40px 40px 40px;
+	background-color: #f2f2f2;
+	min-height: 500px;
+	overflow: hidden;
+	position: relative;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 40px;
+	border-radius: 200px 200px 200px 40px;
+}
+
+/* END TESTIMONIALS STYLES */
