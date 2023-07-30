@@ -113,7 +113,7 @@ const AppNavbar = () => {
 						</button>
 					</div>
 					<BasicTabs />
-
+					{/* 
 					<Tabs.Group aria-label="Default tabs" style="underline">
 						<Tabs.Item title="Login" id="login">
 
