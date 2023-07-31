@@ -11,13 +11,9 @@ import {
 } from '@mui/icons-material';
 
 import styles from './Home.module.css';
+import { slideInLeft, slideInRight } from '../utils/framerVariants';
 
 const FORM_ID = process.env.REACT_APP_FORMSPARK_FORM_ID;
-
-const companyVariant = {
-	visible: { x: 0, transition: { duration: 0.5 } },
-	hidden: { x: -150 }
-};
 
 const Home = () => {
 	const [ref, inView] = useInView();
@@ -71,14 +67,32 @@ const Home = () => {
 				<div className={styles.companiesContainer}>
 					<motion.div
 						ref={ref}
-						variants={companyVariant}
+						variants={slideInLeft}
 						animate={control}
 						initial="hidden"
 						className={styles.companyOne}
 					></motion.div>
-					<div className={styles.companyTwo}></div>
-					<div className={styles.companyThree}></div>
-					<div className={styles.companyFour}></div>
+					<motion.div
+						ref={ref}
+						variants={slideInLeft}
+						animate={control}
+						initial="hidden"
+						className={styles.companyTwo}
+					></motion.div>
+					<motion.div
+						ref={ref}
+						variants={slideInRight}
+						animate={control}
+						initial="hidden"
+						className={styles.companyThree}
+					></motion.div>
+					<motion.div
+						ref={ref}
+						variants={slideInRight}
+						animate={control}
+						initial="hidden"
+						className={styles.companyFour}
+					></motion.div>
 				</div>
 			</section>
 			<section className={styles.infoContainer}>
