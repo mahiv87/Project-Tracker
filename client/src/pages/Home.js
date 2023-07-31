@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import Auth from '../utils/auth';
 import { useFormspark } from '@formspark/use-formspark';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import {
 	CheckCircle,
 	Devices,
@@ -12,7 +14,14 @@ import styles from './Home.module.css';
 
 const FORM_ID = process.env.REACT_APP_FORMSPARK_FORM_ID;
 
+const companyVariant = {
+	visible: { x: 0, transition: { duration: 0.5 } },
+	hidden: { x: -150 }
+};
+
 const Home = () => {
+	const [ref, inView] = useInView();
+	const control = useAnimation();
 	const [submit, submitting] = useFormspark({
 		formId: FORM_ID
 	});
@@ -24,6 +33,14 @@ const Home = () => {
 		await submit({ message });
 		alert('Form submitted');
 	};
+
+	useEffect(() => {
+		if (inView) {
+			control.start('visible');
+		} else {
+			control.start('hidden');
+		}
+	}, [control, inView]);
 
 	return (
 		<div className={styles.homeContainer}>
@@ -52,7 +69,13 @@ const Home = () => {
 			<section className={styles.trustedContainer}>
 				<h2 className={styles.trustedBy}>Trusted By</h2>
 				<div className={styles.companiesContainer}>
-					<div className={styles.companyOne}></div>
+					<motion.div
+						ref={ref}
+						variants={companyVariant}
+						animate={control}
+						initial="hidden"
+						className={styles.companyOne}
+					></motion.div>
 					<div className={styles.companyTwo}></div>
 					<div className={styles.companyThree}></div>
 					<div className={styles.companyFour}></div>
