@@ -17,7 +17,7 @@
 	border-radius: 0px;
 }
 
-/* BEGIN HERO STYLES */
+/* ANCHOR BEGIN HERO STYLES */
 .hero {
 	box-sizing: border-box;
 	flex-shrink: 0;
@@ -297,7 +297,7 @@
 }
 /* END HERO STYLES */
 
-/* BEGIN TRUSTED SECTION STYLES */
+/* ANCHOR BEGIN TRUSTED SECTION STYLES */
 .trustedContainer {
 	box-sizing: border-box;
 	flex-shrink: 0;
@@ -307,6 +307,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-block: 100px;
 	padding: 100px 40px 100px 40px;
 	background-color: #ffffff;
 	overflow: hidden;
@@ -412,7 +413,7 @@
 }
 /* END TRUSTED SECTION STYLES */
 
-/* BEGIN INFO SECTION STYLES */
+/* ANCHOR BEGIN INFO SECTION STYLES */
 .infoContainer {
 	box-sizing: border-box;
 	flex-shrink: 0;
@@ -422,6 +423,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
+	margin-block: 100px;
 	padding: 100px;
 	background-color: #ffffff;
 	overflow: visible;
@@ -525,7 +527,7 @@
 }
 /* END INFO SECTION STYLES */
 
-/* BEGIN TESTIMONIALS STYLES */
+/* ANCHOR BEGIN TESTIMONIALS STYLES */
 .testimonialsContainer {
 	box-sizing: border-box;
 	flex-shrink: 0;
@@ -642,7 +644,7 @@
 }
 /* END TESTIMONIALS STYLES */
 
-/* BEGIN FEATURES STYLES */
+/* ANCHOR BEGIN FEATURES STYLES */
 .featuresContainer {
 	box-sizing: border-box;
 	flex-shrink: 0;
@@ -652,6 +654,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
+	margin-block: 100px;
 	padding: 0px 100px 100px 100px;
 	background-color: #ffffff;
 	overflow: hidden;
@@ -844,7 +847,7 @@
 }
 /* END FEATURES STYLES */
 
-/* BEGIN FAQS STYLES */
+/* ANCHOR BEGIN FAQS STYLES */
 .faqContainer {
 	box-sizing: border-box;
 	flex-shrink: 0;
@@ -854,6 +857,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-block: 100px;
 	padding: 100px;
 	background-color: #ffffff;
 	overflow: hidden;
@@ -961,7 +965,7 @@
 }
 /* END FAQS STYLES */
 
-/* BEGIN CONTACT SECTION */
+/* ANCHOR BEGIN CONTACT SECTION */
 .contactContainer {
 	box-sizing: border-box;
 	flex-shrink: 0;
@@ -971,6 +975,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
+	margin-block: 100px;
 	padding: 100px 40px 100px 40px;
 	background-color: #ffffff;
 	overflow: hidden;
@@ -1102,7 +1107,7 @@
 }
 /* END CONTACT SECTION */
 
-/* BEGIN ANIMATIONS */
+/* ANCHOR BEGIN ANIMATIONS */
 @keyframes slideInLeft {
 	0% {
 		opacity: 0;
