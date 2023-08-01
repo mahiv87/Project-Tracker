@@ -13,10 +13,18 @@ export const slideInLeft700 = {
 	hidden: { x: '-100%' }
 };
 
-export const scale = {
+export const scale400 = {
 	visible: {
 		scale: 1,
-		transition: { duration: 0.3, ease: 'easeOut' }
+		transition: { duration: 0.4, ease: 'easeOut' }
 	},
-	hidden: { scale: 0.5 }
+	hidden: { scale: 0.1 }
+};
+
+export const scale500 = {
+	visible: {
+		scale: 1,
+		transition: { delay: 0.1, duration: 0.5, ease: 'easeOut' }
+	},
+	hidden: { scale: 0.1 }
 };

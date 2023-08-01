@@ -12,7 +12,8 @@ import {
 
 import styles from './Home.module.css';
 import {
-	scale,
+	scale400,
+	scale500,
 	slideInLeft500,
 	slideInLeft700,
 	slideInRight500
@@ -139,7 +140,7 @@ const Home = () => {
 				<div className={styles.testimonialsContent}>
 					<motion.article
 						ref={ref}
-						variants={scale}
+						variants={scale400}
 						animate={control}
 						initial="hidden"
 						className={styles.testimonialsCardLeft}
@@ -153,7 +154,13 @@ const Home = () => {
 						</p>
 						<p className={styles.testimonialsClient}>Very Large Tech Firm</p>
 					</motion.article>
-					<article className={styles.testimonialsCardRight}>
+					<motion.article
+						ref={ref}
+						variants={scale500}
+						animate={control}
+						initial="hidden"
+						className={styles.testimonialsCardRight}
+					>
 						<p className={styles.testimonialsText}>
 							<FormatQuote />
 							Our workflow has improved dramatically with Project Tracker. It's
@@ -161,7 +168,7 @@ const Home = () => {
 							<FormatQuote />
 						</p>
 						<p className={styles.testimonialsClient}>Startup Coders</p>
-					</article>
+					</motion.article>
 				</div>
 			</section>
 			<section className={styles.featuresContainer}>
