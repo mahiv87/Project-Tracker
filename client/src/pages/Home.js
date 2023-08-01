@@ -11,7 +11,12 @@ import {
 } from '@mui/icons-material';
 
 import styles from './Home.module.css';
-import { slideInLeft, slideInRight } from '../utils/framerVariants';
+import {
+	scale,
+	slideInLeft500,
+	slideInLeft700,
+	slideInRight500
+} from '../utils/framerVariants';
 
 const FORM_ID = process.env.REACT_APP_FORMSPARK_FORM_ID;
 
@@ -67,28 +72,28 @@ const Home = () => {
 				<div className={styles.companiesContainer}>
 					<motion.div
 						ref={ref}
-						variants={slideInLeft}
+						variants={slideInLeft500}
 						animate={control}
 						initial="hidden"
 						className={styles.companyOne}
 					></motion.div>
 					<motion.div
 						ref={ref}
-						variants={slideInLeft}
+						variants={slideInLeft500}
 						animate={control}
 						initial="hidden"
 						className={styles.companyTwo}
 					></motion.div>
 					<motion.div
 						ref={ref}
-						variants={slideInRight}
+						variants={slideInRight500}
 						animate={control}
 						initial="hidden"
 						className={styles.companyThree}
 					></motion.div>
 					<motion.div
 						ref={ref}
-						variants={slideInRight}
+						variants={slideInRight500}
 						animate={control}
 						initial="hidden"
 						className={styles.companyFour}
@@ -97,22 +102,48 @@ const Home = () => {
 			</section>
 			<section className={styles.infoContainer}>
 				<article className={styles.infoContent}>
-					<h2 className={styles.infoHeading}>Discover a new workflow</h2>
-					<article className={styles.paragraphContainer}>
+					<motion.h2
+						ref={ref}
+						variants={slideInLeft700}
+						animate={control}
+						initial="hidden"
+						className={styles.infoHeading}
+					>
+						Discover a new workflow
+					</motion.h2>
+					<motion.article
+						ref={ref}
+						variants={slideInLeft500}
+						animate={control}
+						initial="hidden"
+						className={styles.paragraphContainer}
+					>
 						<h3 className={styles.paragraphText}>
 							Introducing Project Tracker, the ultimate solution for developers
 							to keep their projects in check. Organize, track, and manage all
 							your work in one place.
 						</h3>
-					</article>
-					<div className={styles.decorationsContainer}>
+					</motion.article>
+					<motion.div
+						ref={ref}
+						variants={slideInRight500}
+						animate={control}
+						initial="hidden"
+						className={styles.decorationsContainer}
+					>
 						<div className={styles.infoDecoration}></div>
-					</div>
+					</motion.div>
 				</article>
 			</section>
 			<section className={styles.testimonialsContainer}>
 				<div className={styles.testimonialsContent}>
-					<article className={styles.testimonialsCardLeft}>
+					<motion.article
+						ref={ref}
+						variants={scale}
+						animate={control}
+						initial="hidden"
+						className={styles.testimonialsCardLeft}
+					>
 						<p className={styles.testimonialsText}>
 							<FormatQuote />
 							Project Tracker revolutionized the way our team manages multile
@@ -121,7 +152,7 @@ const Home = () => {
 							<FormatQuote />
 						</p>
 						<p className={styles.testimonialsClient}>Very Large Tech Firm</p>
-					</article>
+					</motion.article>
 					<article className={styles.testimonialsCardRight}>
 						<p className={styles.testimonialsText}>
 							<FormatQuote />
