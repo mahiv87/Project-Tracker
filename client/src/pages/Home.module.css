@@ -23,12 +23,11 @@
 	flex-shrink: 0;
 	width: 100%;
 	height: calc(100vh - 64px);
-	/* height: min-content; 670px */
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding: 100px 100px 100px 100px;
+	padding: 100px 20px;
 	background-color: #073b4c;
 	min-height: 600px;
 	overflow: hidden;
@@ -36,7 +35,7 @@
 	align-content: center;
 	flex-wrap: nowrap;
 	gap: 100px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .container {
@@ -51,11 +50,11 @@
 	max-width: 1000px;
 	overflow: hidden;
 	position: relative;
-	padding: 0px 0px 0px 0px;
+	padding: 0px;
 	align-content: center;
 	flex-wrap: nowrap;
 	gap: 60px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .contentLeft {
@@ -70,11 +69,11 @@
 	max-width: 800px;
 	overflow: hidden;
 	position: relative;
-	padding: 0px 0px 0px 0px;
+	padding: 0px;
 	align-content: flex-start;
 	flex-wrap: nowrap;
 	gap: 20px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 	animation: slideInLeft 500ms ease-out 0s 1 normal forwards;
 }
 
@@ -141,14 +140,14 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding: 10px 20px 10px 20px;
+	padding: 10px 20px;
 	background-color: #ef476f;
 	overflow: hidden;
 	position: relative;
 	align-content: center;
 	flex-wrap: nowrap;
 	gap: 10px;
-	border-radius: 9999px;
+	border-radius: 8px;
 	cursor: pointer;
 }
 
@@ -203,16 +202,13 @@
 	justify-self: start;
 	align-self: start;
 	aspect-ratio: 2.1433566433566433 / 1;
-	border-radius: 0px 200px 0px 200px;
+	border-radius: 0px 200px;
 }
 
 .imgTopRight {
 	flex-shrink: 0;
 	height: 143px;
 	display: block;
-	/* -webkit-filter: grayscale(1); */
-	/* filter: grayscale(1); */
-	/* mix-blend-mode: luminosity; */
 	overflow: hidden;
 	position: relative;
 	justify-self: start;
@@ -229,9 +225,6 @@
 	flex-shrink: 0;
 	height: 144px;
 	display: block;
-	/* -webkit-filter: grayscale(1); */
-	/* filter: grayscale(1); */
-	/* mix-blend-mode: luminosity; */
 	overflow: hidden;
 	position: relative;
 	justify-self: start;
@@ -254,16 +247,13 @@
 	justify-self: start;
 	align-self: start;
 	aspect-ratio: 1 / 1;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .imgCenterRight {
 	flex-shrink: 0;
 	height: 144px;
 	display: block;
-	/* -webkit-filter: grayscale(1); */
-	/* filter: grayscale(1); */
-	/* mix-blend-mode: luminosity; */
 	overflow: hidden;
 	position: relative;
 	justify-self: start;
@@ -293,9 +283,6 @@
 	flex-shrink: 0;
 	height: 144px;
 	display: block;
-	/* -webkit-filter: grayscale(1); */
-	/* filter: grayscale(1); */
-	/* mix-blend-mode: luminosity; */
 	overflow: hidden;
 	position: relative;
 	grid-column: auto / span 2;
@@ -327,7 +314,7 @@
 	align-content: center;
 	flex-wrap: nowrap;
 	gap: 15px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .trustedBy {
@@ -362,7 +349,7 @@
 	align-content: center;
 	flex-wrap: wrap;
 	gap: 60px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .companyOne {
@@ -377,7 +364,7 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 .companyTwo {
 	flex-shrink: 0;
@@ -391,7 +378,7 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .companyThree {
@@ -406,7 +393,7 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .companyFour {
@@ -421,7 +408,7 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 /* END TRUSTED SECTION STYLES */
 
@@ -500,7 +487,7 @@
 	/* align-content: center; */
 	flex-wrap: nowrap;
 	gap: 40px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .paragraphText {
@@ -550,7 +537,7 @@
 	align-items: center;
 	margin: 200px;
 	background-color: #ffffff;
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
 	align-content: center;
 	flex-wrap: nowrap;
@@ -567,13 +554,13 @@
 	justify-content: center;
 	align-items: center;
 	max-width: 1000px;
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
-	padding: 0px 0px 0px 0px;
+	padding: 0px;
 	align-content: center;
 	flex-wrap: nowrap;
 	gap: 20px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .testimonialsCardLeft {
@@ -586,10 +573,10 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 40px 40px 40px 40px;
+	padding: 40px;
 	background-color: #f2f2f2;
 	min-height: 500px;
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
 	align-content: center;
 	flex-wrap: nowrap;
@@ -643,10 +630,10 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 40px 40px 40px 40px;
+	padding: 40px;
 	background-color: #f2f2f2;
 	min-height: 500px;
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
 	align-content: center;
 	flex-wrap: nowrap;
@@ -772,7 +759,7 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: flex-start;
-	padding: 25px 25px 25px 25px;
+	padding: 25px;
 	background-color: #f2f2f2;
 	overflow: visible;
 	position: relative;
@@ -793,11 +780,11 @@
 	align-items: flex-start;
 	overflow: visible;
 	position: relative;
-	padding: 0px 0px 0px 0px;
+	padding: 0px;
 	align-content: flex-start;
 	flex-wrap: nowrap;
 	gap: 20px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .featureCardHeading {
@@ -810,11 +797,11 @@
 	align-items: center;
 	overflow: visible;
 	position: relative;
-	padding: 0px 0px 0px 0px;
+	padding: 0px;
 	align-content: center;
 	flex-wrap: nowrap;
 	gap: 20px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .featureCardTitle {
@@ -991,7 +978,7 @@
 	align-content: flex-start;
 	flex-wrap: nowrap;
 	gap: 60px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 }
 
 .contactTitle {
@@ -1051,7 +1038,7 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding: 15px 15px 15px 15px;
+	padding: 15px;
 	box-shadow: 0px 0.7065919983928324px 0.7065919983928324px -0.625px rgba(0, 0, 0, 0.15),
 		0px 1.8065619053231785px 1.8065619053231785px -1.25px rgba(0, 0, 0, 0.14398),
 		0px 3.6217592146567767px 3.6217592146567767px -1.875px rgba(0, 0, 0, 0.13793),
