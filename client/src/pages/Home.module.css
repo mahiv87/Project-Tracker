@@ -75,6 +75,7 @@
 	flex-wrap: nowrap;
 	gap: 20px;
 	border-radius: 0px 0px 0px 0px;
+	animation: slideInLeft 500ms ease-out 0s 1 normal forwards;
 }
 
 .logoContainer {
@@ -187,6 +188,7 @@
 	grid-template-rows: repeat(2, min-content);
 	padding: 0px;
 	gap: 20px;
+	animation: scaleIn 700ms ease-out 0s 1 normal forwards;
 }
 
 .blobTopLeft {
@@ -726,7 +728,7 @@
 
 .featureCardContainer {
 	flex-shrink: 0;
-	width: 1440px;
+	width: 100%;
 	height: min-content; /* 218px */
 	display: flex;
 	flex-direction: row;
@@ -976,7 +978,7 @@
 .contactContainer {
 	box-sizing: border-box;
 	flex-shrink: 0;
-	width: 1440px;
+	width: 100%;
 	height: min-content; /* 610px */
 	display: flex;
 	flex-direction: column;
@@ -1112,3 +1114,27 @@
 	border: 1px solid #000000;
 }
 /* END CONTACT SECTION */
+
+/* BEGIN ANIMATIONS */
+@keyframes slideInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes scaleIn {
+	0% {
+		transform: scale(0.5);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+/* END ANIMATIONS */
