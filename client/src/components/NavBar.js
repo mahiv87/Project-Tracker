@@ -53,21 +53,23 @@ const AppNavbar = () => {
 								<li className="nav-item flex wrop">
 									<Link
 										to="/projects"
-										className="px-3 py-2 flex items-center text-sm font-bold leading-snug text-white hover:opacity-75"
+										className="px-3 py-2 flex items-center text-sm font-bold leading-snug hover:opacity-75"
 										onClick={function () {
 											setNavbarOpen(false);
 										}}
 									>
-										<span className="ml-2 px-2">My Projects</span>
-										<i className="fa-solid fa-terminal text-md leading-lg text-white opacity-75"></i>
+										<span className="ml-2 px-2 text-greenText">
+											My Projects
+										</span>
+										{/* <i className="fa-solid fa-terminal text-md leading-lg opacity-75"></i> */}
 									</Link>
 									<Link
 										to="/"
 										onClick={logout}
-										className="px-3 py-2 flex items-center text-sm font-bold leading-snug text-white hover:opacity-75"
+										className="px-3 py-2 flex items-center text-sm font-bold leading-snug hover:opacity-75 text-greenText"
 									>
 										Logout
-										<i className="fab fa-regular fa-user text-lg leading-lg text-white opacity-75"></i>
+										{/* <i className="fab fa-regular fa-user text-lg leading-lg text-white opacity-75"></i> */}
 									</Link>
 								</li>
 							) : (
