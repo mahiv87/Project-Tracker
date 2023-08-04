@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap');
 :root {
 	--offWhite: #f2f2f2;
-	--primary: #e98659;
-	--secondary: #5bc7a5;
+	--primary: #073b4c;
+	--secondary: #06d6a0;
+	--accent: #ef476f;
 	--blackText: #3f3d56;
+}
+
+.timeDate {
+	text-align: center;
+	font-size: 36px;
+	font-family: 'Unica One', sans-serif;
 }
 
 .savedProjectsBody {
@@ -11,7 +20,9 @@
 }
 
 .button {
-	border: 2px solid var(--secondary);
+	background-color: var(--accent);
+	color: var(--offWhite);
+	border: 2px solid var(--accent);
 	border-radius: 18px;
 	font-weight: bold;
 	padding: 4px 16px;
@@ -19,11 +30,11 @@
 }
 
 .button:hover {
-	color: var(--offWhite);
-	background-color: var(--secondary);
+	opacity: 0.9;
+	transition: all 500ms ease-out;
 }
 
 .projectsHead {
-	background: linear-gradient(90deg, var(--orange) 0%, #ff8e3c 100%);
+	background: var(--primary);
 	height: 5rem;
 }
