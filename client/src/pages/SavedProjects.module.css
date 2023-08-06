@@ -30,8 +30,10 @@
 }
 
 .button:hover {
-	opacity: 0.9;
-	transition: all 500ms ease-out;
+	filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+		drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+	scale: 1.05;
+	transition: all 150ms ease-out;
 }
 
 .projectsHead {
@@ -39,36 +41,21 @@
 	height: 5rem;
 }
 
-.infoDecorationBottomLeft {
-	box-sizing: border-box;
-	flex-shrink: 0;
-	width: 1000px;
-	height: 500px;
-	display: block;
-	overflow: hidden;
-	opacity: 0.1;
+.tableContainer::after {
+	content: '';
+	height: 400px;
+	width: 215px;
+	opacity: 0.3;
 	transform: rotate(134deg);
-	z-index: 0;
-	position: absolute;
-	bottom: -150px;
-	left: -300px;
 	border-radius: 100%;
+	position: absolute;
+	top: 17px;
+	left: 0px;
+	z-index: 0;
 	border: 1px solid #000000;
 }
 
-.infoDecorationTopRight {
-	box-sizing: border-box;
-	flex-shrink: 0;
-	width: 1000px;
-	height: 500px;
-	display: block;
-	overflow: hidden;
-	opacity: 0.1;
-	transform: rotate(134deg);
-	z-index: 0;
-	position: absolute;
-	top: -282px;
-	right: -200px;
-	border-radius: 100%;
-	border: 1px solid #000000;
+select option:hover {
+	background-color: #06d6a0;
+	color: #f2f2f2;
 }

@@ -118,11 +118,11 @@ const SavedProjects = () => {
 						: 'hidden'
 				}
 			>
-				<div className="relative p-4 w-full max-w-md h-full md:h-auto">
+				<div className="relative p-4 w-full max-w-md h-full md:h-auto bg-white rounded-lg  drop-shadow-lg">
 					{/* <!-- Modal content --> */}
 					<div className="flex justify-end">
 						<button className="" onClick={() => setShowModal(false)}>
-							<i className="fa-solid fa-xmark text-neutral-500 dark:text-white hover:text-purple-900 dark:hover:text-indigo-500"></i>
+							<i className="fa-solid fa-xmark text-secondary hover:drop-shadow-lg hover:scale-105"></i>
 						</button>
 					</div>
 					<div
@@ -143,7 +143,7 @@ const SavedProjects = () => {
 												name="projectName"
 												type="text"
 												id="project-name-input"
-												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-greenText peer"
 												placeholder="Enter the project's name"
 												onChange={handleChange}
 												required
@@ -153,7 +153,7 @@ const SavedProjects = () => {
 										<div className="relative z-0 mb-6 w-full group dark:text-white">
 											<label htmlFor="project-type-input">Project Type</label>
 											<select
-												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-white dark:bg-neutral-800 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-white border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-greenText peer"
 												id="project-type-input"
 												name="projectType"
 												onChange={handleChange}
@@ -182,7 +182,7 @@ const SavedProjects = () => {
 												name="rate"
 												type="number"
 												id="hourly-rate-input"
-												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-greenText peer"
 												placeholder="$"
 												onChange={handleChange}
 												min="0"
@@ -194,12 +194,12 @@ const SavedProjects = () => {
 											<label htmlFor="due-date-input">Due Date</label>
 											<input
 												name="due"
-												datepicker=""
-												datepicker-autohide=""
+												datepicker
+												datepicker-autohide
 												type="text"
 												min="1"
 												id="due-date-input"
-												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-greenText peer"
 												placeholder="When is the project due?"
 												onChange={handleChange}
 												required
@@ -209,9 +209,9 @@ const SavedProjects = () => {
 									<div className="modal-footer">
 										<button
 											type="submit"
-											className="flex mx-auto p-0.5 mb-2  overflow-hidden text-sm font-medium text-gray-900 rounded-sm group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+											className="flex mx-auto p-0.5 mb-2  overflow-hidden text-white bg-secondary rounded-full hover:drop-shadow-lg hover:scale-105"
 										>
-											<span className="justify-center px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-neutral-900 rounded-sm group-hover:bg-opacity-0">
+											<span className="justify-center px-4 py-1 font-bold ">
 												Submit
 											</span>
 										</button>
@@ -234,44 +234,44 @@ const SavedProjects = () => {
 				)}
 			</div>
 
-			<div className="container mx-auto mt-6 ">
-				<Table>
-					<Table.Head className={styles.projectsHead}>
-						<Table.HeadCell className="text-white text-lg">
-							Project Name
-						</Table.HeadCell>
-						<Table.HeadCell className="text-white text-lg">
-							Project Type
-						</Table.HeadCell>
-						<Table.HeadCell className="text-white text-lg">
-							Hourly Rate
-						</Table.HeadCell>
-						<Table.HeadCell className="text-white text-lg">
-							Due Date
-						</Table.HeadCell>
-						{/* <Table.HeadCell className="text-white text-lg">Days Remaining</Table.HeadCell>
+			<div className={styles.tableContainer}>
+				<div className="container mx-auto mt-6">
+					<Table>
+						<Table.Head className={styles.projectsHead}>
+							<Table.HeadCell className="text-white text-lg">
+								Project Name
+							</Table.HeadCell>
+							<Table.HeadCell className="text-white text-lg">
+								Project Type
+							</Table.HeadCell>
+							<Table.HeadCell className="text-white text-lg">
+								Hourly Rate
+							</Table.HeadCell>
+							<Table.HeadCell className="text-white text-lg">
+								Due Date
+							</Table.HeadCell>
+							{/* <Table.HeadCell className="text-white text-lg">Days Remaining</Table.HeadCell>
 						<Table.HeadCell className="text-white text-lg">Potential Earnings</Table.HeadCell> */}
-						<Table.HeadCell>
-							<span className="sr-only">Edit</span>
-						</Table.HeadCell>
-					</Table.Head>
-					<Table.Body className="divide-y">
-						{userData.savedProjects.map((project) => {
-							return (
-								<ProjectComponent
-									_id={project._id}
-									name={project.projectName}
-									type={project.projectType}
-									rate={project.rate}
-									due={project.due}
-								/>
-							);
-						})}
-					</Table.Body>
-				</Table>
+							<Table.HeadCell>
+								<span className="sr-only">Edit</span>
+							</Table.HeadCell>
+						</Table.Head>
+						<Table.Body className="divide-y">
+							{userData.savedProjects.map((project) => {
+								return (
+									<ProjectComponent
+										_id={project._id}
+										name={project.projectName}
+										type={project.projectType}
+										rate={project.rate}
+										due={project.due}
+									/>
+								);
+							})}
+						</Table.Body>
+					</Table>
+				</div>
 			</div>
-			<div className={styles.infoDecorationTopRight}></div>
-			<div className={styles.infoDecorationBottomLeft}></div>
 		</div>
 	);
 };
