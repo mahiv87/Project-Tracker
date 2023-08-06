@@ -17,12 +17,12 @@
 	justify-content: center;
 	align-items: center;
 	padding: 15px 15px 15px 15px;
-	box-shadow: 0px 0.7065919983928324px 0.7065919983928324px -0.625px rgba(0, 0, 0, 0.15),
+	/* box-shadow: 0px 0.7065919983928324px 0.7065919983928324px -0.625px rgba(0, 0, 0, 0.15),
 		0px 1.8065619053231785px 1.8065619053231785px -1.25px rgba(0, 0, 0, 0.14398),
 		0px 3.6217592146567767px 3.6217592146567767px -1.875px rgba(0, 0, 0, 0.13793),
 		0px 6.8655999097303715px 6.8655999097303715px -2.5px rgba(0, 0, 0, 0.12711),
 		0px 13.646761411524492px 13.646761411524492px -3.125px rgba(0, 0, 0, 0.10451),
-		0px 30px 30px -3.75px rgba(0, 0, 0, 0.05);
+		0px 30px 30px -3.75px rgba(0, 0, 0, 0.05); */
 	background-color: #ef476f;
 	overflow: visible;
 	position: relative;
@@ -34,8 +34,10 @@
 }
 
 .loginButton:hover {
-	opacity: 0.9;
-	transition: all 300ms ease-out;
+	filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+		drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+	scale: 1.05;
+	transition: all 150ms ease-out;
 }
 
 .loginText {
