@@ -66,7 +66,7 @@ export default function ProjectComponent(props) {
 				<Table.Cell>
 					<button
 						onClick={() => handleRemoveProject(props._id)}
-						className="relative inline-flex items-center justify-center px-5 py-1 mb-2 mr-2 overflow-hidden bg-secondary text-white font-bold rounded-full"
+						className="relative inline-flex items-center justify-center px-5 py-1 mb-2 mr-2 overflow-hidden bg-secondary text-white font-bold rounded-full hover:drop-shadow-lg hover:scale-105 transition-all 300ms ease-out"
 					>
 						Remove
 					</button>
