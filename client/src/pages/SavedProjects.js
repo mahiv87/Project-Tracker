@@ -102,7 +102,7 @@ const SavedProjects = () => {
 		<div className={styles.savedProjectsBody}>
 			<div className="w-screen h-24">
 				<h1 className={styles.timeDate}>Current Time &amp; Date:</h1>
-				<p className="text-center text-blackText">{currentTime}</p>
+				<p className="text-center text-blackText font-bold">{currentTime}</p>
 			</div>
 			<div className="container w-fit mx-auto mt-6">
 				<button onClick={() => setShowModal(true)} className={styles.button}>
