@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 // import Auth from '../utils/auth';
 import { useFormspark } from '@formspark/use-formspark';
 import { motion, useAnimation } from 'framer-motion';
@@ -11,13 +11,13 @@ import {
 } from '@mui/icons-material';
 
 import styles from './Home.module.css';
-import {
-	scale400,
-	scale500,
-	slideInLeft500,
-	slideInLeft700,
-	slideInRight500
-} from '../utils/framerVariants';
+// import {
+// 	scale400,
+// 	scale500,
+// 	slideInLeft500,
+// 	slideInLeft700,
+// 	slideInRight500
+// } from '../utils/framerVariants';
 
 const FORM_ID = process.env.REACT_APP_FORMSPARK_FORM_ID;
 
@@ -36,13 +36,48 @@ const Home = () => {
 		alert('Form submitted');
 	};
 
-	useEffect(() => {
+	const slideInLeft500 = {
+		visible: { x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+		hidden: { x: '-100%' }
+	};
+
+	const slideInRight500 = {
+		visible: { x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+		hidden: { x: '100%' }
+	};
+
+	const slideInLeft700 = {
+		visible: { x: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+		hidden: { x: '-100%' }
+	};
+
+	const scale400 = {
+		visible: {
+			scale: 1,
+			transition: { duration: 0.4, ease: 'easeOut' }
+		},
+		hidden: { scale: 0.1 }
+	};
+
+	const scale500 = {
+		visible: {
+			scale: 1,
+			transition: { delay: 0.1, duration: 0.5, ease: 'easeOut' }
+		},
+		hidden: { scale: 0.1 }
+	};
+
+	const handleAnimation = useCallback(() => {
 		if (inView) {
 			control.start('visible');
 		} else {
 			control.start('hidden');
 		}
 	}, [control, inView]);
+
+	useEffect(() => {
+		handleAnimation();
+	}, [handleAnimation]);
 
 	return (
 		<div className={styles.homeContainer}>
