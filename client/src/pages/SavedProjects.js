@@ -234,7 +234,7 @@ const SavedProjects = () => {
 				)}
 			</div>
 
-			<div className="container mx-auto mt-6">
+			<div className="container mx-auto mt-6 ">
 				<Table>
 					<Table.Head className={styles.projectsHead}>
 						<Table.HeadCell className="text-white text-lg">
@@ -270,6 +270,8 @@ const SavedProjects = () => {
 					</Table.Body>
 				</Table>
 			</div>
+			<div className={styles.infoDecorationTopRight}></div>
+			<div className={styles.infoDecorationBottomLeft}></div>
 		</div>
 	);
 };

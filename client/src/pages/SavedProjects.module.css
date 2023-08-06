@@ -38,3 +38,37 @@
 	background: var(--primary);
 	height: 5rem;
 }
+
+.infoDecorationBottomLeft {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 1000px;
+	height: 500px;
+	display: block;
+	overflow: hidden;
+	opacity: 0.1;
+	transform: rotate(134deg);
+	z-index: 0;
+	position: absolute;
+	bottom: -150px;
+	left: -300px;
+	border-radius: 100%;
+	border: 1px solid #000000;
+}
+
+.infoDecorationTopRight {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 1000px;
+	height: 500px;
+	display: block;
+	overflow: hidden;
+	opacity: 0.1;
+	transform: rotate(134deg);
+	z-index: 0;
+	position: absolute;
+	top: -282px;
+	right: -200px;
+	border-radius: 100%;
+	border: 1px solid #000000;
+}
