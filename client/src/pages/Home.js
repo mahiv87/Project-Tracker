@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 // import Auth from '../utils/auth';
 import { useFormspark } from '@formspark/use-formspark';
-import { motion, useAnimation } from 'framer-motion';
+import { inView, motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
 	CheckCircle,
@@ -11,19 +11,31 @@ import {
 } from '@mui/icons-material';
 
 import styles from './Home.module.css';
-// import {
-// 	scale400,
-// 	scale500,
-// 	slideInLeft500,
-// 	slideInLeft700,
-// 	slideInRight500
-// } from '../utils/framerVariants';
+import {
+	scale400,
+	scale500,
+	companySlideInLeft500,
+	companySlideInRight500,
+	infoSlideInLeft500,
+	infoSlideInRight500,
+	infoSlideInLeft700
+} from '../utils/framerVariants';
 
 const FORM_ID = process.env.REACT_APP_FORMSPARK_FORM_ID;
 
 const Home = () => {
-	const [ref, inView] = useInView();
-	const control = useAnimation();
+	const [companyRef, companyInView] = useInView({
+		threshold: 1
+	});
+	const [infoRef, infoInView] = useInView({
+		threshold: 1
+	});
+	const [testimonialRef, testimonialInView] = useInView({
+		threshold: 1
+	});
+	const companyControl = useAnimation();
+	const infoControl = useAnimation();
+	const testimonialControl = useAnimation();
 	const [submit, submitting] = useFormspark({
 		formId: FORM_ID
 	});
@@ -36,48 +48,50 @@ const Home = () => {
 		alert('Form submitted');
 	};
 
-	const slideInLeft500 = {
-		visible: { x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-		hidden: { x: '-100%' }
-	};
-
-	const slideInRight500 = {
-		visible: { x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-		hidden: { x: '100%' }
-	};
-
-	const slideInLeft700 = {
-		visible: { x: 0, transition: { duration: 0.7, ease: 'easeOut' } },
-		hidden: { x: '-100%' }
-	};
-
-	const scale400 = {
-		visible: {
-			scale: 1,
-			transition: { duration: 0.4, ease: 'easeOut' }
+	const handleCompanyAnimation = useCallback(
+		(ref, inView) => {
+			if (inView) {
+				companyControl.start('visible');
+			} else {
+				companyControl.start('hidden');
+			}
 		},
-		hidden: { scale: 0.1 }
-	};
+		[companyControl]
+	);
 
-	const scale500 = {
-		visible: {
-			scale: 1,
-			transition: { delay: 0.1, duration: 0.5, ease: 'easeOut' }
+	const handleInfoAnimation = useCallback(
+		(ref, inView) => {
+			if (inView) {
+				infoControl.start('visible');
+			} else {
+				infoControl.start('hidden');
+			}
 		},
-		hidden: { scale: 0.1 }
-	};
+		[infoControl]
+	);
 
-	const handleAnimation = useCallback(() => {
-		if (inView) {
-			control.start('visible');
-		} else {
-			control.start('hidden');
-		}
-	}, [control, inView]);
+	const handleTestimonialAnimation = useCallback(
+		(ref, inView) => {
+			if (inView) {
+				testimonialControl.start('visible');
+			} else {
+				testimonialControl.start('hidden');
+			}
+		},
+		[testimonialControl]
+	);
 
 	useEffect(() => {
-		handleAnimation();
-	}, [handleAnimation]);
+		handleCompanyAnimation(companyRef, companyInView);
+	}, [handleCompanyAnimation, companyRef, companyInView]);
+
+	useEffect(() => {
+		handleInfoAnimation(infoRef, infoInView);
+	}, [handleInfoAnimation, infoRef, infoInView]);
+
+	useEffect(() => {
+		handleTestimonialAnimation(testimonialRef, testimonialInView);
+	}, [handleTestimonialAnimation, testimonialRef, testimonialInView]);
 
 	return (
 		<div className={styles.homeContainer}>
@@ -107,30 +121,30 @@ const Home = () => {
 				<h2 className={styles.trustedBy}>Trusted By</h2>
 				<div className={styles.companiesContainer}>
 					<motion.div
-						ref={ref}
-						variants={slideInLeft500}
-						animate={control}
+						ref={companyRef}
+						variants={companySlideInLeft500}
+						animate={companyControl}
 						initial="hidden"
 						className={styles.companyOne}
 					></motion.div>
 					<motion.div
-						ref={ref}
-						variants={slideInLeft500}
-						animate={control}
+						ref={companyRef}
+						variants={companySlideInLeft500}
+						animate={companyControl}
 						initial="hidden"
 						className={styles.companyTwo}
 					></motion.div>
 					<motion.div
-						ref={ref}
-						variants={slideInRight500}
-						animate={control}
+						ref={companyRef}
+						variants={companySlideInRight500}
+						animate={companyControl}
 						initial="hidden"
 						className={styles.companyThree}
 					></motion.div>
 					<motion.div
-						ref={ref}
-						variants={slideInRight500}
-						animate={control}
+						ref={companyRef}
+						variants={companySlideInRight500}
+						animate={companyControl}
 						initial="hidden"
 						className={styles.companyFour}
 					></motion.div>
@@ -139,18 +153,18 @@ const Home = () => {
 			<section className={styles.infoContainer}>
 				<article className={styles.infoContent}>
 					<motion.h2
-						ref={ref}
-						variants={slideInLeft700}
-						animate={control}
+						ref={infoRef}
+						variants={infoSlideInLeft700}
+						animate={infoControl}
 						initial="hidden"
 						className={styles.infoHeading}
 					>
 						Discover a new workflow
 					</motion.h2>
 					<motion.article
-						ref={ref}
-						variants={slideInLeft500}
-						animate={control}
+						ref={infoRef}
+						variants={infoSlideInLeft500}
+						animate={infoControl}
 						initial="hidden"
 						className={styles.paragraphContainer}
 					>
@@ -161,9 +175,9 @@ const Home = () => {
 						</h3>
 					</motion.article>
 					<motion.div
-						ref={ref}
-						variants={slideInRight500}
-						animate={control}
+						ref={infoRef}
+						variants={infoSlideInRight500}
+						animate={infoControl}
 						initial="hidden"
 						className={styles.decorationsContainer}
 					>
@@ -174,9 +188,9 @@ const Home = () => {
 			<section className={styles.testimonialsContainer}>
 				<div className={styles.testimonialsContent}>
 					<motion.article
-						ref={ref}
+						ref={testimonialRef}
 						variants={scale400}
-						animate={control}
+						animate={testimonialControl}
 						initial="hidden"
 						className={styles.testimonialsCardLeft}
 					>
@@ -190,9 +204,9 @@ const Home = () => {
 						<p className={styles.testimonialsClient}>Very Large Tech Firm</p>
 					</motion.article>
 					<motion.article
-						ref={ref}
+						ref={testimonialRef}
 						variants={scale500}
-						animate={control}
+						animate={testimonialControl}
 						initial="hidden"
 						className={styles.testimonialsCardRight}
 					>
