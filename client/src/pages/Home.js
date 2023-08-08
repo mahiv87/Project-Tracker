@@ -18,24 +18,25 @@ import {
 	companySlideInRight500,
 	infoSlideInLeft500,
 	infoSlideInRight500,
-	infoSlideInLeft700
+	infoSlideInLeft700,
+	springFadeIn,
+	container
 } from '../utils/framerVariants';
 
 const FORM_ID = process.env.REACT_APP_FORMSPARK_FORM_ID;
 
 const Home = () => {
-	const [companyRef, companyInView] = useInView({
-		threshold: 1
-	});
-	const [infoRef, infoInView] = useInView({
-		threshold: 1
-	});
-	const [testimonialRef, testimonialInView] = useInView({
-		threshold: 1
-	});
+	const [companyRef, companyInView] = useInView();
+	const [infoRef, infoInView] = useInView();
+	const [testimonialRef, testimonialInView] = useInView();
+	const [containerRef, containerInView] = useInView();
+	const [featureRef, featureInView] = useInView();
 	const companyControl = useAnimation();
 	const infoControl = useAnimation();
 	const testimonialControl = useAnimation();
+	const containerControl = useAnimation();
+	const featureControl = useAnimation({ threshold: 1 });
+
 	const [submit, submitting] = useFormspark({
 		formId: FORM_ID
 	});
@@ -81,6 +82,28 @@ const Home = () => {
 		[testimonialControl]
 	);
 
+	const handleContainerAnimation = useCallback(
+		(ref, inView) => {
+			if (inView) {
+				containerControl.start('visible');
+			} else {
+				containerControl.start('hidden');
+			}
+		},
+		[containerControl]
+	);
+
+	const handleFeatureAnimation = useCallback(
+		(ref, inView) => {
+			if (inView) {
+				featureControl.start('visible');
+			} else {
+				featureControl.start('hidden');
+			}
+		},
+		[featureControl]
+	);
+
 	useEffect(() => {
 		handleCompanyAnimation(companyRef, companyInView);
 	}, [handleCompanyAnimation, companyRef, companyInView]);
@@ -92,6 +115,14 @@ const Home = () => {
 	useEffect(() => {
 		handleTestimonialAnimation(testimonialRef, testimonialInView);
 	}, [handleTestimonialAnimation, testimonialRef, testimonialInView]);
+
+	useEffect(() => {
+		handleContainerAnimation(containerRef, containerInView);
+	}, [handleContainerAnimation, containerRef, containerInView]);
+
+	useEffect(() => {
+		handleFeatureAnimation(featureRef, featureInView);
+	}, [handleFeatureAnimation, featureRef, featureInView]);
 
 	return (
 		<div className={styles.homeContainer}>
@@ -229,8 +260,20 @@ const Home = () => {
 						Project Tracker helps you manage your projects throughout the day
 					</p>
 				</div>
-				<div className={styles.featureCardContainer}>
-					<div className={styles.featureCard}>
+				<motion.div
+					ref={containerRef}
+					variants={container}
+					animate={containerControl}
+					initial="hidden"
+					className={styles.featureCardContainer}
+				>
+					<motion.div
+						ref={featureRef}
+						variants={springFadeIn}
+						// animate={featureControl}
+						// initial="hidden"
+						className={styles.featureCard}
+					>
 						<div className={styles.featureCardContent}>
 							<div className={styles.featureCardMain}>
 								<div className={styles.featureCardHeading}>
@@ -243,8 +286,14 @@ const Home = () => {
 								</p>
 							</div>
 						</div>
-					</div>
-					<div className={styles.featureCard}>
+					</motion.div>
+					<motion.div
+						ref={featureRef}
+						variants={springFadeIn}
+						// animate={featureControl}
+						// initial="hidden"
+						className={styles.featureCard}
+					>
 						<div className={styles.featureCardContent}>
 							<div className={styles.featureCardMain}>
 								<div className={styles.featureCardHeading}>
@@ -257,8 +306,14 @@ const Home = () => {
 								</p>
 							</div>
 						</div>
-					</div>
-					<div className={styles.featureCard}>
+					</motion.div>
+					<motion.div
+						ref={featureRef}
+						variants={springFadeIn}
+						// animate={featureControl}
+						// initial="hidden"
+						className={styles.featureCard}
+					>
 						<div className={styles.featureCardContent}>
 							<div className={styles.featureCardMain}>
 								<div className={styles.featureCardHeading}>
@@ -270,8 +325,8 @@ const Home = () => {
 								</p>
 							</div>
 						</div>
-					</div>
-				</div>
+					</motion.div>
+				</motion.div>
 			</section>
 			<section className={styles.faqContainer}>
 				<h2 className={styles.faqHeading}>Frequently Asked Questions</h2>
