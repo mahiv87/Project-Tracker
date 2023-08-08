@@ -40,7 +40,7 @@ const LoginForm = () => {
 	};
 
 	return (
-		<>
+		<div>
 			{/* ALERT POPUP */}
 			{error && (
 				<div
@@ -116,7 +116,7 @@ const LoginForm = () => {
 					</button>
 				</form>
 			)}
-		</>
+		</div>
 	);
 };
 
