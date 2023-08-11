@@ -45,8 +45,8 @@ const Home = () => {
 	const featureControl = useAnimation({ threshold: 1 });
 	const faqControl = useAnimation({ threshold: 1 });
 	const contactControl = useAnimation();
-	const contactDecorationLeftControl = useAnimation();
-	const contactDecorationRightControl = useAnimation();
+	const contactDecorationLeftControl = useAnimation({ threshold: 1 });
+	const contactDecorationRightControl = useAnimation({ threshold: 1 });
 
 	const [submit, submitting] = useFormspark({
 		formId: FORM_ID
@@ -218,9 +218,9 @@ const Home = () => {
 							<p className={styles.projectTracker}>Project Tracker</p>
 						</div>
 						<h1 className={styles.tagline}>Manage projects effortlessly</h1>
-						<div className={styles.tryButton}>
+						{/* <div className={styles.tryButton}>
 							<p className={styles.tryButtonText}>Try it now</p>
-						</div>
+						</div> */}
 					</article>
 					<article className={styles.contentRight}>
 						<div className={styles.blobTopLeft}></div>
