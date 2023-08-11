@@ -14,10 +14,10 @@ import SignupForm from './SignupForm';
 const theme = createTheme({
 	palette: {
 		primary: {
-			main: '#e98659'
+			main: '#073b4c'
 		},
 		secondary: {
-			main: '#5bc7a5'
+			main: '#ef476f'
 		}
 	}
 });
