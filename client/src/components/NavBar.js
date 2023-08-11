@@ -30,13 +30,15 @@ const AppNavbar = () => {
 							Project Tracker
 						</p> */}
 						<button
-							className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+							className="text-greenText cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
 							type="button"
 							onClick={() => setNavbarOpen(!navbarOpen)}
 						>
 							<i
 								className={
-									navbarOpen ? 'fa-solid fa-plus rotate-45' : 'fa-solid fa-plus'
+									navbarOpen
+										? 'fa-solid fa-plus rotate-45 duration-500 ease-out'
+										: 'fa-solid fa-plus duration-500 ease-out'
 								}
 							></i>
 						</button>
@@ -44,7 +46,7 @@ const AppNavbar = () => {
 					<div
 						className={
 							navbarOpen
-								? 'absolute z-10 top-14 left-0 bg-primary w-full flex'
+								? 'z-10 bg-primary w-full flex justify-center'
 								: 'lg:flex flex-grow items-center hidden'
 						}
 					>
