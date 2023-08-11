@@ -20,7 +20,9 @@ import {
 	infoSlideInRight500,
 	infoSlideInLeft700,
 	springFadeIn,
-	container
+	container,
+	leftTilt,
+	rightTilt
 } from '../utils/framerVariants';
 
 const FORM_ID = process.env.REACT_APP_FORMSPARK_FORM_ID;
@@ -31,11 +33,20 @@ const Home = () => {
 	const [testimonialRef, testimonialInView] = useInView();
 	const [containerRef, containerInView] = useInView();
 	const [featureRef, featureInView] = useInView();
+	const [faqRef, faqInView] = useInView();
+	const [contactRef, contactInView] = useInView();
+	const [contactDecorationLeftRef, contactDecorationLeftInView] = useInView();
+	const [contactDecorationRightRef, contactDecorationRightInView] = useInView();
+
 	const companyControl = useAnimation();
 	const infoControl = useAnimation();
 	const testimonialControl = useAnimation();
 	const containerControl = useAnimation();
 	const featureControl = useAnimation({ threshold: 1 });
+	const faqControl = useAnimation({ threshold: 1 });
+	const contactControl = useAnimation();
+	const contactDecorationLeftControl = useAnimation();
+	const contactDecorationRightControl = useAnimation();
 
 	const [submit, submitting] = useFormspark({
 		formId: FORM_ID
@@ -104,6 +115,50 @@ const Home = () => {
 		[featureControl]
 	);
 
+	const handleFaqAnimation = useCallback(
+		(ref, inView) => {
+			if (inView) {
+				faqControl.start('visible');
+			} else {
+				faqControl.start('hidden');
+			}
+		},
+		[faqControl]
+	);
+
+	const handleContactAnimation = useCallback(
+		(ref, inView) => {
+			if (inView) {
+				contactControl.start('visible');
+			} else {
+				contactControl.start('hidden');
+			}
+		},
+		[contactControl]
+	);
+
+	const handleContactDecorationLeftAnimation = useCallback(
+		(ref, inView) => {
+			if (inView) {
+				contactDecorationLeftControl.start('visible');
+			} else {
+				contactDecorationLeftControl.start('hidden');
+			}
+		},
+		[contactDecorationLeftControl]
+	);
+
+	const handleContactDecorationRightAnimation = useCallback(
+		(ref, inView) => {
+			if (inView) {
+				contactDecorationRightControl.start('visible');
+			} else {
+				contactDecorationRightControl.start('hidden');
+			}
+		},
+		[contactDecorationRightControl]
+	);
+
 	useEffect(() => {
 		handleCompanyAnimation(companyRef, companyInView);
 	}, [handleCompanyAnimation, companyRef, companyInView]);
@@ -123,6 +178,36 @@ const Home = () => {
 	useEffect(() => {
 		handleFeatureAnimation(featureRef, featureInView);
 	}, [handleFeatureAnimation, featureRef, featureInView]);
+
+	useEffect(() => {
+		handleFaqAnimation(faqRef, faqInView);
+	}, [handleFaqAnimation, faqRef, faqInView]);
+
+	useEffect(() => {
+		handleContactAnimation(contactRef, contactInView);
+	}, [handleContactAnimation, contactRef, contactInView]);
+
+	useEffect(() => {
+		handleContactDecorationLeftAnimation(
+			contactDecorationLeftRef,
+			contactDecorationLeftInView
+		);
+	}, [
+		handleContactDecorationLeftAnimation,
+		contactDecorationLeftRef,
+		contactDecorationLeftInView
+	]);
+
+	useEffect(() => {
+		handleContactDecorationRightAnimation(
+			contactDecorationRightRef,
+			contactDecorationRightInView
+		);
+	}, [
+		handleContactDecorationRightAnimation,
+		contactDecorationRightRef,
+		contactDecorationRightInView
+	]);
 
 	return (
 		<div className={styles.homeContainer}>
@@ -330,7 +415,13 @@ const Home = () => {
 			</section>
 			<section className={styles.faqContainer}>
 				<h2 className={styles.faqHeading}>Frequently Asked Questions</h2>
-				<div className={styles.faqQuestionsContainer}>
+				<motion.div
+					ref={faqRef}
+					variants={springFadeIn}
+					animate={faqControl}
+					initial="hidden"
+					className={styles.faqQuestionsContainer}
+				>
 					<div className={styles.faqQuestion}>
 						<h2 className={styles.faqQuestionTitle}>
 							How secure is Project Tracker?
@@ -351,11 +442,18 @@ const Home = () => {
 							needs without any financial burden
 						</p>
 					</div>
-				</div>
+				</motion.div>
 			</section>
 			<section className={styles.contactContainer}>
 				<h2 className={styles.contactTitle}>Contact</h2>
-				<form onSubmit={onFormSubmit} className={styles.formContainer}>
+				<motion.form
+					ref={contactRef}
+					variants={infoSlideInLeft500}
+					animate={contactControl}
+					initial="hidden"
+					onSubmit={onFormSubmit}
+					className={styles.formContainer}
+				>
 					<div className={styles.formInputs}>
 						<input
 							className={styles.formInput}
@@ -385,10 +483,22 @@ const Home = () => {
 					>
 						Send
 					</button>
-				</form>
+				</motion.form>
 				<div className={styles.decorationsContainer}>
-					<div className={styles.decorationOne}></div>
-					<div className={styles.decorationTwo}></div>
+					<motion.div
+						ref={contactDecorationRightRef}
+						variants={rightTilt}
+						animate={contactDecorationRightControl}
+						initial="hidden"
+						className={styles.decorationOne}
+					></motion.div>
+					<motion.div
+						ref={contactDecorationLeftRef}
+						variants={leftTilt}
+						animate={contactDecorationLeftControl}
+						initial="hidden"
+						className={styles.decorationTwo}
+					></motion.div>
 				</div>
 			</section>
 		</div>

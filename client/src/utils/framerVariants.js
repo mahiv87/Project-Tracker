@@ -60,3 +60,19 @@ export const springFadeIn = {
 	},
 	hidden: { opacity: 0, y: 20 }
 };
+
+export const leftTilt = {
+	visible: {
+		rotate: 56,
+		transition: { type: 'spring', bounce: 0.5, damping: 24, duration: 0.3 }
+	},
+	hidden: { rotate: 90 }
+};
+
+export const rightTilt = {
+	visible: {
+		rotate: 154,
+		transition: { type: 'spring', bounce: 0.5, damping: 24, duration: 0.3 }
+	},
+	hidden: { rotate: 90 }
+};
