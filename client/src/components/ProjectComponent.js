@@ -1,7 +1,11 @@
 import React from 'react';
 import { Table } from 'flowbite-react';
 import Auth from '../utils/auth';
-import { removeProjectId, saveProjectIds, getSavedProjectIds } from '../utils/localStorage';
+import {
+	removeProjectId,
+	saveProjectIds,
+	getSavedProjectIds
+} from '../utils/localStorage';
 import { useMutation, useQuery } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
 import { SAVE_PROJECT, REMOVE_PROJECT } from '../utils/mutations';
@@ -50,23 +54,21 @@ export default function ProjectComponent(props) {
 
 	return (
 		<>
-			<Table.Row className="bg-white dark:border-neutral-700 dark:bg-neutral-800">
-				<Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+			<Table.Row className="bg-white ">
+				<Table.Cell className="whitespace-nowrap font-bold text-gray-900">
 					{props.name}
 				</Table.Cell>
-				<Table.Cell>{props.type}</Table.Cell>
-				<Table.Cell>${props.rate}</Table.Cell>
-				<Table.Cell>{props.due}</Table.Cell>
+				<Table.Cell className="font-bold">{props.type}</Table.Cell>
+				<Table.Cell className="font-bold">${props.rate}</Table.Cell>
+				<Table.Cell className="font-bold">{props.due}</Table.Cell>
 				{/* <Table.Cell>1</Table.Cell>
 				<Table.Cell>$4080</Table.Cell> */}
 				<Table.Cell>
 					<button
 						onClick={() => handleRemoveProject(props._id)}
-						className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-sm group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"
+						className="relative inline-flex items-center justify-center px-5 py-1 mb-2 mr-2 overflow-hidden bg-secondary text-white font-bold rounded-full hover:drop-shadow-lg hover:scale-105 transition-all 300ms ease-out"
 					>
-						<span className="relative px-5 py-1 transition-all ease-in duration-75 bg-white dark:bg-neutral-900 rounded-sm group-hover:bg-opacity-0">
-							Remove
-						</span>
+						Remove
 					</button>
 				</Table.Cell>
 			</Table.Row>

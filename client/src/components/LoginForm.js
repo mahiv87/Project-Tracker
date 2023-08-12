@@ -5,7 +5,10 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const LoginForm = () => {
-	const [userFormData, setUserFormData] = useState({ email: 'demo@demo.com', password: 'password1' });
+	const [userFormData, setUserFormData] = useState({
+		email: 'demo@demo.com',
+		password: 'password1'
+	});
 	const [login, { error, data }] = useMutation(LOGIN_USER);
 	const navigate = useNavigate();
 
@@ -37,10 +40,14 @@ const LoginForm = () => {
 	};
 
 	return (
-		<>
+		<div>
 			{/* ALERT POPUP */}
 			{error && (
-				<div id="alert-additional-content-2" className="p-4 mb-4 bg-red-100 rounded-sm dark:bg-red-200" role="alert">
+				<div
+					id="alert-additional-content-2"
+					className="p-4 mb-4 bg-red-100 rounded-sm dark:bg-red-200"
+					role="alert"
+				>
 					<div className="flex items-center justify-center mb-3">
 						<svg
 							aria-hidden="true"
@@ -56,7 +63,9 @@ const LoginForm = () => {
 							></path>
 						</svg>
 						<span className="sr-only">Info</span>
-						<h3 className="text-lg font-medium text-red-700 dark:text-red-800">Invalid credentials</h3>
+						<h3 className="text-lg font-medium text-red-700 dark:text-red-800">
+							Invalid credentials
+						</h3>
 					</div>
 				</div>
 			)}
@@ -64,7 +73,8 @@ const LoginForm = () => {
 			{/* LOGIN FORM */}
 			{data ? (
 				<p className="dark:text-white">
-					Success! You may now head <Link to="/projects"> to the Project page.</Link>
+					Success! You may now head{' '}
+					<Link to="/projects"> to the Project page.</Link>
 				</p>
 			) : (
 				<form onSubmit={handleFormSubmit}>
@@ -73,13 +83,13 @@ const LoginForm = () => {
 							type="email"
 							name="email"
 							// id="floating_email"
-							className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+							className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
 							placeholder=" "
 							value={userFormData.email}
 							onChange={handleInputChange}
 							required
 						/>
-						<label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+						<label className="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
 							Email
 						</label>
 					</div>
@@ -88,27 +98,25 @@ const LoginForm = () => {
 							type="password"
 							name="password"
 							// id="floating_password"
-							className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+							className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
 							placeholder=" "
 							value={userFormData.password}
 							onChange={handleInputChange}
 							required
 						/>
-						<label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+						<label className="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
 							Password
 						</label>
 					</div>
 					<button
 						type="submit"
-						className="flex mx-auto p-0.5 mb-2  overflow-hidden text-sm font-medium text-gray-900 rounded-sm group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+						className="flex mx-auto px-4 py-1 mb-2 overflow-hidden text-sm font-bold text-gray-900 rounded-full border-2 border-secondary hover:text-offWhite hover:bg-secondary transition-all ease-in duration-150"
 					>
-						<span className="justify-center px-5 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-neutral-900 rounded-sm group-hover:bg-opacity-0">
-							Submit
-						</span>
+						Submit
 					</button>
 				</form>
 			)}
-		</>
+		</div>
 	);
 };
 

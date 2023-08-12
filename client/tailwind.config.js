@@ -1,8 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{js,jsx,ts,tsx}', 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'],
+	content: [
+		'./src/**/*.{js,jsx,ts,tsx}',
+		'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
+	],
 	theme: {
 		extend: {
+			colors: {
+				offWhite: '#f2f2f2',
+				primary: '#073b4c',
+				secondary: '#ef476f',
+				greenText: '#06d6a0',
+				blackText: '#3f3d56'
+			},
 			fontSize: {
 				tiny: '.5rem'
 			},
