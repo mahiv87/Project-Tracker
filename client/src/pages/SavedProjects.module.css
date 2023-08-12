@@ -15,7 +15,7 @@
 }
 
 .savedProjectsBody {
-	background-color: white;
+	/* background-color: white; */
 	height: 100vh;
 }
 
@@ -39,6 +39,7 @@
 .projectsHead {
 	background: var(--primary);
 	height: 5rem;
+	z-index: 1;
 }
 
 .tableContainer::after {
@@ -51,7 +52,7 @@
 	position: absolute;
 	top: 17px;
 	left: 0px;
-	z-index: 0;
+	z-index: -1;
 	border: 1px solid #000000;
 }
 
