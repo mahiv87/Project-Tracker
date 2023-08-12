@@ -76,9 +76,9 @@ const AppNavbar = () => {
 								</li>
 							) : (
 								<div className={styles.linksContainer}>
-									<li className={styles.contactLink}>
+									{/* <li className={styles.contactLink}>
 										<p>Contact</p>
-									</li>
+									</li> */}
 									<li className="nav-item">
 										<Link
 											to="/"
