@@ -40,7 +40,7 @@ const Home = () => {
 
 	const companyControl = useAnimation();
 	const infoControl = useAnimation();
-	const testimonialControl = useAnimation();
+	const testimonialControl = useAnimation({ threshold: 0.5 });
 	const containerControl = useAnimation();
 	const featureControl = useAnimation({ threshold: 1 });
 	const faqControl = useAnimation({ threshold: 1 });
