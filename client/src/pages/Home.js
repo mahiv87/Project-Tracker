@@ -40,13 +40,13 @@ const Home = () => {
 
 	const companyControl = useAnimation();
 	const infoControl = useAnimation();
-	const testimonialControl = useAnimation({ threshold: 0.5 });
+	const testimonialControl = useAnimation();
 	const containerControl = useAnimation();
-	const featureControl = useAnimation({ threshold: 1 });
-	const faqControl = useAnimation({ threshold: 1 });
+	const featureControl = useAnimation();
+	const faqControl = useAnimation();
 	const contactControl = useAnimation();
-	const contactDecorationLeftControl = useAnimation({ threshold: 1 });
-	const contactDecorationRightControl = useAnimation({ threshold: 1 });
+	const contactDecorationLeftControl = useAnimation();
+	const contactDecorationRightControl = useAnimation();
 
 	const [submit, submitting] = useFormspark({
 		formId: FORM_ID
