@@ -444,7 +444,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	max-width: 1000px;
+	max-width: 1280px;
 	overflow: visible;
 	z-index: 1;
 	position: relative;
@@ -555,9 +555,9 @@
 	height: min-content; /* 500px */
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
-	max-width: 1000px;
+	max-width: 1280px;
 	/* overflow: hidden; */
 	position: relative;
 	padding: 0px;
@@ -570,16 +570,16 @@
 .testimonialsCardLeft {
 	box-sizing: border-box;
 	flex-shrink: 0;
-	flex: 1 0 0px;
-	width: 1px;
-	height: min-content; /* 500px */
+	/* flex: 1 0 0px; */
+	width: 500px;
+	height: 500px; /* 500px */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 40px;
 	background-color: #f2f2f2;
-	min-height: 500px;
+	/* min-height: 500px; */
 	/* overflow: hidden; */
 	position: relative;
 	align-content: center;
@@ -627,16 +627,16 @@
 .testimonialsCardRight {
 	box-sizing: border-box;
 	flex-shrink: 0;
-	flex: 1 0 0px;
-	width: 1px;
-	height: min-content; /* 500px */
+	/* flex: 1 0 0px; */
+	width: 500px;
+	height: 500px; /* 500px */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 40px;
 	background-color: #f2f2f2;
-	min-height: 500px;
+	/* min-height: 500px; */
 	/* overflow: hidden; */
 	position: relative;
 	align-content: center;
@@ -651,6 +651,7 @@
 	box-sizing: border-box;
 	flex-shrink: 0;
 	width: 100%;
+	max-width: 1280px;
 	height: min-content; /* 630px */
 	display: flex;
 	flex-direction: column;
@@ -877,7 +878,7 @@
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	word-break: break-word;
-	max-width: 1000px;
+	max-width: 1280px;
 	overflow: visible;
 	position: relative;
 	font-weight: 400;
@@ -972,6 +973,7 @@
 	box-sizing: border-box;
 	flex-shrink: 0;
 	width: 100%;
+	max-width: 1280px;
 	height: min-content; /* 610px */
 	display: flex;
 	flex-direction: column;
@@ -1295,9 +1297,9 @@
 		flex-shrink: 0;
 		height: 100px;
 		display: block;
-		-webkit-filter: grayscale(1);
-		filter: grayscale(1);
-		mix-blend-mode: luminosity;
+		/* -webkit-filter: grayscale(1); */
+		/* filter: grayscale(1); */
+		/* mix-blend-mode: luminosity; */
 		overflow: hidden;
 		position: relative;
 		justify-self: start;
@@ -1314,9 +1316,9 @@
 		flex-shrink: 0;
 		height: 100px;
 		display: block;
-		-webkit-filter: grayscale(1);
-		filter: grayscale(1);
-		mix-blend-mode: luminosity;
+		/* -webkit-filter: grayscale(1); */
+		/* filter: grayscale(1); */
+		/* mix-blend-mode: luminosity; */
 		overflow: hidden;
 		position: relative;
 		justify-self: start;
@@ -1346,9 +1348,9 @@
 		flex-shrink: 0;
 		height: 100px;
 		display: block;
-		-webkit-filter: grayscale(1);
-		filter: grayscale(1);
-		mix-blend-mode: luminosity;
+		/* -webkit-filter: grayscale(1); */
+		/* filter: grayscale(1); */
+		/* mix-blend-mode: luminosity; */
 		overflow: hidden;
 		position: relative;
 		justify-self: start;
@@ -1378,9 +1380,9 @@
 		flex-shrink: 0;
 		height: 100px;
 		display: block;
-		-webkit-filter: grayscale(1);
-		filter: grayscale(1);
-		mix-blend-mode: luminosity;
+		/* -webkit-filter: grayscale(1); */
+		/* filter: grayscale(1); */
+		/* mix-blend-mode: luminosity; */
 		overflow: hidden;
 		position: relative;
 		grid-column: auto / span 2;
@@ -1567,8 +1569,8 @@
 		/* flex: 1 0 0px; */
 		position: relative;
 		padding: 0px 0px 0px 0px;
-		align-content: center;
-		flex-wrap: nowrap;
+		/* align-content: center; */
+		/* flex-wrap: nowrap; */
 		gap: 10px;
 		border-radius: 0px 0px 0px 0px;
 	}
@@ -1577,7 +1579,7 @@
 		box-sizing: border-box;
 		/* flex-shrink: 0; */
 		width: 100%;
-		height: min-content; /* 240px */
+		height: 250px; /* 240px */
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -1586,8 +1588,8 @@
 		background-color: #f2f2f2;
 		/* overflow: hidden; */
 		/* flex: 1 0 0px; */
-		position: relative;
-		align-content: center;
+		/* position: relative; */
+		/* align-content: center; */
 		flex-wrap: nowrap;
 		gap: 40px;
 		border-radius: 40px 200px 200px 200px;
@@ -1597,7 +1599,7 @@
 		box-sizing: border-box;
 		/* flex-shrink: 0; */
 		width: 100%;
-		height: min-content; /* 221px */
+		height: 250px; /* 221px */
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -1606,8 +1608,8 @@
 		background-color: #f2f2f2;
 		/* overflow: hidden; */
 		/* flex: 1 0 0px; */
-		position: relative;
-		align-content: center;
+		/* position: relative; */
+		/* align-content: center; */
 		flex-wrap: nowrap;
 		gap: 40px;
 		border-radius: 200px 200px 200px 40px;
