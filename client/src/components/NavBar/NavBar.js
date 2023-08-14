@@ -4,8 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 // import LoginForm from './LoginForm';
 // import { Tabs } from 'flowbite-react';
 // import { TableIcon } from '@heroicons/react/outline';
-import BasicTabs from './TabsComponent';
-import Auth from '../utils/auth';
+import BasicTabs from '../TabsComponent';
+import Auth from '../../utils/auth';
 import styles from './NavBar.module.css';
 
 const AppNavbar = () => {

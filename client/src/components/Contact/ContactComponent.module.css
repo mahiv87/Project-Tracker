@@ -1,0 +1,189 @@
+/* ANCHOR BEGIN CONTACT SECTION */
+.contactContainer {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 1280px;
+	height: min-content; /* 610px */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-block: 100px;
+	padding: 100px 40px 100px 40px;
+	background-color: #ffffff;
+	overflow: hidden;
+	position: relative;
+	align-content: flex-start;
+	flex-wrap: nowrap;
+	gap: 60px;
+	border-radius: 0px;
+}
+
+.contactTitle {
+	flex-shrink: 0;
+	width: auto; /* 149px */
+	height: auto; /* 60px */
+	white-space: pre;
+	overflow: visible;
+	position: relative;
+	font-weight: 400;
+	font-style: normal;
+	font-family: 'Unica One', sans-serif;
+	color: var(--token-b9c3c957-2c66-49c4-9732-fa196fddac20, #001122);
+	font-size: 50px;
+	letter-spacing: -2.1px;
+	line-height: 1.2;
+	text-align: left;
+}
+
+.formContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	z-index: 1;
+}
+
+.formInputs {
+	display: flex;
+	gap: 10px;
+}
+
+.formInput {
+	height: 50px;
+	background-color: #f2f2f2;
+	font-weight: 600;
+	font-style: normal;
+	font-family: 'Manrope', sans-serif;
+	border: none;
+	border-radius: 8px;
+}
+
+.formMessage {
+	height: 150px;
+	background-color: #f2f2f2;
+	font-weight: 600;
+	font-style: normal;
+	font-family: 'Manrope', sans-serif;
+	border: none;
+	border-radius: 8px;
+}
+
+.formButton {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 100%; /* 67px */
+	height: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	box-shadow: 0px 0.7065919983928324px 0.7065919983928324px -0.625px rgba(0, 0, 0, 0.15),
+		0px 1.8065619053231785px 1.8065619053231785px -1.25px rgba(0, 0, 0, 0.14398),
+		0px 3.6217592146567767px 3.6217592146567767px -1.875px rgba(0, 0, 0, 0.13793),
+		0px 6.8655999097303715px 6.8655999097303715px -2.5px rgba(0, 0, 0, 0.12711),
+		0px 13.646761411524492px 13.646761411524492px -3.125px rgba(0, 0, 0, 0.10451),
+		0px 30px 30px -3.75px rgba(0, 0, 0, 0.05);
+	color: #ffffff;
+	background-color: #ef476f;
+	font-weight: bolder;
+	font-style: normal;
+	font-family: 'Manrope', sans-serif;
+	overflow: visible;
+	position: relative;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 10px;
+	border-radius: 8px;
+}
+
+.formButton:hover {
+	opacity: 0.9;
+	transition: all 300ms ease-out;
+}
+
+.decorationsContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-end;
+	width: 100%;
+}
+
+.decorationOne {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 527px;
+	height: 277px;
+	display: block;
+	overflow: hidden;
+	opacity: 0.3;
+	transform: rotate(-124deg);
+	z-index: 0;
+	position: absolute;
+	border-radius: 100%;
+	border: 1px solid #000000;
+}
+
+.decorationTwo {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 527px;
+	height: 277px;
+	display: block;
+	overflow: hidden;
+	opacity: 0.3;
+	transform: rotate(-26deg);
+	z-index: 0;
+	position: absolute;
+	border-radius: 100%;
+	border: 1px solid #000000;
+}
+/* END CONTACT SECTION */
+
+@media screen and (max-width: 600px) {
+	.contactContainer {
+		box-sizing: border-box;
+		flex-shrink: 0;
+		width: 100%;
+		height: min-content; /* 610px */
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		padding: 100px 40px 100px 40px;
+		margin-block: 50px;
+		background-color: #ffffff;
+		overflow: hidden;
+		position: relative;
+		align-content: flex-start;
+		flex-wrap: nowrap;
+		gap: 60px;
+		border-radius: 0px 0px 0px 0px;
+	}
+
+	.contactTitle {
+		flex-shrink: 0;
+		width: auto; /* 149px */
+		height: auto; /* 60px */
+		white-space: pre;
+		overflow: visible;
+		position: relative;
+		font-weight: bolder;
+		font-style: normal;
+		font-family: 'Unica One', sans-serif;
+		color: var(--token-b9c3c957-2c66-49c4-9732-fa196fddac20, #001122);
+		font-size: 38px;
+		letter-spacing: -2.1px;
+		line-height: 1.2;
+		text-align: left;
+	}
+
+	.formContainer {
+		width: 100%;
+	}
+	.formInput {
+		width: 50%;
+	}
+}

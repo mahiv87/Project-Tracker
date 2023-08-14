@@ -1,0 +1,408 @@
+/* ANCHOR BEGIN FEATURES STYLES */
+.featuresContainer {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 1280px;
+	height: min-content; /* 630px */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	margin-block: 100px;
+	padding: 0px 100px 100px 100px;
+	background-color: #ffffff;
+	overflow: hidden;
+	position: relative;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 40px;
+	border-radius: 0px;
+}
+
+.featuresHeading {
+	flex-shrink: 0;
+	width: min-content; /* 682px */
+	height: min-content; /* 172px */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+	padding: 0px;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 40px;
+	border-radius: 0px;
+}
+
+.featuresTitle {
+	flex-shrink: 0;
+	width: auto; /* 682px */
+	height: auto; /* 58px */
+	white-space: pre;
+	position: relative;
+	font-weight: 400;
+	font-style: normal;
+	font-family: 'Unica One', sans-serif;
+	color: #000000;
+	font-size: 48px;
+	letter-spacing: 0em;
+	line-height: 1.2;
+}
+
+.featuresSubtitle {
+	flex-shrink: 0;
+	width: auto;
+	height: auto; /* 74px */
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	word-break: break-word;
+	align-self: stretch;
+	position: relative;
+	font-weight: 400;
+	font-style: normal;
+	font-family: 'Manrope', 'Manrope Placeholder', sans-serif;
+	color: #000000;
+	font-size: 31px;
+	letter-spacing: 0em;
+	line-height: 1.2;
+	text-align: center;
+}
+
+.featureCardContainer {
+	flex-shrink: 0;
+	width: 100%;
+	height: min-content; /* 218px */
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	overflow: visible;
+	position: relative;
+	padding: 0px;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 24px;
+	border-radius: 0px;
+}
+
+.featureCard {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	flex: 1 0 0px;
+	width: 1px;
+	height: min-content; /* 218px */
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 2px;
+	overflow: visible;
+	position: relative;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 10px;
+	border-radius: 19px;
+}
+
+.featureCardContent {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	flex: 1 0 0px;
+	width: 1px;
+	height: 214px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 25px;
+	background-color: #f2f2f2;
+	overflow: visible;
+	position: relative;
+	align-content: flex-start;
+	flex-wrap: nowrap;
+	gap: 10px;
+	border-radius: 17px;
+}
+
+.featureCardMain {
+	flex-shrink: 0;
+	flex: 1 0 0px;
+	width: 1px;
+	height: min-content; /* 161px */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	overflow: visible;
+	position: relative;
+	padding: 0px;
+	align-content: flex-start;
+	flex-wrap: nowrap;
+	gap: 20px;
+	border-radius: 0px;
+}
+
+.featureCardHeading {
+	flex-shrink: 0;
+	width: min-content; /* 222px */
+	height: min-content; /* 60px */
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	overflow: visible;
+	position: relative;
+	padding: 0px;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 20px;
+	border-radius: 0px;
+}
+
+.featureCardTitle {
+	flex-shrink: 0;
+	width: 162px;
+	height: auto; /* 22px */
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	word-break: break-word;
+	overflow: visible;
+	position: relative;
+	font-weight: 700;
+	font-style: normal;
+	font-family: 'Manrope', 'Manrope Placeholder', sans-serif;
+	color: #000000;
+	font-size: 22px;
+	letter-spacing: -1px;
+	line-height: 1;
+	text-align: left;
+}
+
+.featureCardText {
+	flex-shrink: 0;
+	width: 100%;
+	height: auto; /* 81px */
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	word-break: break-word;
+	overflow: hidden;
+	position: relative;
+	opacity: 0.8;
+	font-weight: 700;
+	font-style: normal;
+	font-family: 'Manrope', 'Manrope Placeholder', sans-serif;
+	color: #073b4c;
+	font-size: 18px;
+	letter-spacing: 0em;
+	line-height: 1.5;
+	text-align: left;
+}
+/* END FEATURES STYLES */
+
+@media screen and (max-width: 600px) {
+	.featuresContainer {
+		box-sizing: border-box;
+		flex-shrink: 0;
+		width: 100%;
+		height: min-content; /* 990px */
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 20px 20px 20px 20px;
+		background-color: #ffffff;
+		overflow: hidden;
+		position: relative;
+		align-content: center;
+		flex-wrap: nowrap;
+		gap: 40px;
+		border-radius: 0px 0px 0px 0px;
+	}
+
+	.featuresHeading {
+		flex-shrink: 0;
+		width: min-content; /* 350px */
+		height: min-content; /* 208px */
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		overflow: hidden;
+		position: relative;
+		padding: 0px 0px 0px 0px;
+		align-content: center;
+		flex-wrap: nowrap;
+		gap: 20px;
+		border-radius: 0px 0px 0px 0px;
+	}
+
+	.featuresTitle {
+		flex-shrink: 0;
+		width: 350px;
+		height: auto; /* 91px */
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		word-break: break-word;
+		position: relative;
+		font-weight: bolder;
+		font-style: normal;
+		font-family: 'Unica One', sans-serif;
+		color: #000000;
+		font-size: 38px;
+		letter-spacing: 0em;
+		line-height: 1.2;
+		text-align: center;
+	}
+
+	.featuresSubtitle {
+		flex-shrink: 0;
+		width: 350px;
+		height: auto; /* 97px */
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		word-break: break-word;
+		overflow: visible;
+		position: relative;
+		font-weight: 400;
+		font-style: normal;
+		font-family: 'Manrope', 'Manrope Placeholder', sans-serif;
+		color: #000000;
+		font-size: 20px;
+		letter-spacing: 0em;
+		line-height: 1.2;
+		text-align: center;
+	}
+
+	.featureCardContainer {
+		flex-shrink: 0;
+		width: 350px;
+		height: min-content; /* 702px */
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		max-width: 680px;
+		overflow: visible;
+		position: relative;
+		padding: 0px 0px 0px 0px;
+		align-content: center;
+		flex-wrap: nowrap;
+		gap: 24px;
+		border-radius: 0px 0px 0px 0px;
+	}
+
+	.featureCard {
+		box-sizing: border-box;
+		flex-shrink: 0;
+		width: 100%;
+		height: min-content; /* 218px */
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 2px 2px 2px 2px;
+		overflow: visible;
+		position: relative;
+		align-content: center;
+		flex-wrap: nowrap;
+		gap: 10px;
+		border-radius: 19px;
+	}
+
+	.featureCardContent {
+		box-sizing: border-box;
+		flex-shrink: 0;
+		flex: 1 0 0px;
+		width: 1px;
+		height: 214px;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-start;
+		padding: 25px 25px 25px 25px;
+		background-color: #f2f2f2;
+		overflow: visible;
+		position: relative;
+		align-content: flex-start;
+		flex-wrap: nowrap;
+		gap: 10px;
+		border-radius: 17px;
+	}
+
+	.featureCardMain {
+		flex-shrink: 0;
+		flex: 1 0 0px;
+		width: 1px;
+		height: min-content; /* 161px */
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		overflow: visible;
+		position: relative;
+		padding: 0px 0px 0px 0px;
+		align-content: flex-start;
+		flex-wrap: nowrap;
+		gap: 20px;
+		border-radius: 0px 0px 0px 0px;
+	}
+
+	.featureCardHeading {
+		flex-shrink: 0;
+		width: min-content; /* 222px */
+		height: min-content; /* 60px */
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		overflow: visible;
+		position: relative;
+		padding: 0px 0px 0px 0px;
+		align-content: center;
+		flex-wrap: nowrap;
+		gap: 20px;
+		border-radius: 0px 0px 0px 0px;
+	}
+
+	.featureCardTitle {
+		flex-shrink: 0;
+		width: 162px;
+		height: auto; /* 22px */
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		word-break: break-word;
+		overflow: visible;
+		position: relative;
+		font-weight: bolder;
+		font-style: normal;
+		font-family: 'Manrope', 'Manrope Placeholder', sans-serif;
+		color: #000000;
+		font-size: 22px;
+		letter-spacing: -1px;
+		line-height: 1;
+		text-align: left;
+	}
+
+	.featureCardText {
+		flex-shrink: 0;
+		width: 100%;
+		height: auto; /* 81px */
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		word-break: break-word;
+		overflow: hidden;
+		position: relative;
+		opacity: 0.8;
+		font-weight: bolder;
+		font-style: normal;
+		font-family: 'Manrope', 'Manrope Placeholder', sans-serif;
+		color: #073b4c;
+		font-size: 18px;
+		letter-spacing: 0em;
+		line-height: 1.5;
+		text-align: left;
+	}
+}
