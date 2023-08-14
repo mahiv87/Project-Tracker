@@ -1,0 +1,140 @@
+/* ANCHOR BEGIN TRUSTED SECTION STYLES */
+.trustedContainer {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 100%;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-block: 100px;
+	padding: 100px 40px 100px 40px;
+	background-color: #ffffff;
+	overflow: hidden;
+	position: relative;
+	align-content: center;
+	flex-wrap: nowrap;
+	gap: 15px;
+	border-radius: 0px;
+}
+
+.trustedBy {
+	flex-shrink: 0;
+	width: auto; /* 200px */
+	height: auto; /* 60px */
+	white-space: pre;
+	overflow: visible;
+	position: relative;
+	font-weight: 400;
+	font-style: normal;
+	font-family: 'Unica One', sans-serif;
+	color: var(--token-b9c3c957-2c66-49c4-9732-fa196fddac20, #001122);
+	font-size: 50px;
+	letter-spacing: -2.1px;
+	line-height: 1.2;
+	text-align: left;
+}
+
+.companiesContainer {
+	flex-shrink: 0;
+	width: 1000px;
+	height: min-content; /* 46px */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+	overflow: visible;
+	position: relative;
+	padding: 0px 0px 0px 0px;
+	align-content: center;
+	flex-wrap: wrap;
+	gap: 60px;
+	border-radius: 0px;
+}
+
+.companyOne {
+	flex-shrink: 0;
+	width: 136px;
+	height: 46px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	aspect-ratio: 2.9565217391304346 / 1;
+	background-image: url('../../images/logoipsum-220.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 0px;
+}
+.companyTwo {
+	flex-shrink: 0;
+	width: 136px;
+	height: 46px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	aspect-ratio: 2.9565217391304346 / 1;
+	background-image: url('../../images/logoipsum-260.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 0px;
+}
+
+.companyThree {
+	flex-shrink: 0;
+	width: 136px;
+	height: 46px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	aspect-ratio: 2.9565217391304346 / 1;
+	background-image: url('../../images/logoipsum-285.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 0px;
+}
+
+.companyFour {
+	flex-shrink: 0;
+	width: 136px;
+	height: 46px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	aspect-ratio: 2.9565217391304346 / 1;
+	background-image: url('../../images/logoipsum-297.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 0px;
+}
+/* END TRUSTED SECTION STYLES */
+
+@media screen and (max-width: 600px) {
+	.trustedContainer {
+		box-sizing: border-box;
+		flex-shrink: 0;
+		width: 100%;
+		height: min-content; /* 347px */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 60px 20px 60px 20px;
+		background-color: #ffffff;
+		overflow: hidden;
+		position: relative;
+		align-content: center;
+		flex-wrap: nowrap;
+		gap: 15px;
+		border-radius: 0px 0px 0px 0px;
+	}
+	.trustedBy {
+		font-size: 38px;
+		font-weight: bolder;
+	}
+}
