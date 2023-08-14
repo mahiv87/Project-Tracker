@@ -142,7 +142,7 @@
 }
 /* END CONTACT SECTION */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
 	.contactContainer {
 		box-sizing: border-box;
 		flex-shrink: 0;
@@ -182,6 +182,7 @@
 
 	.formContainer {
 		width: 100%;
+		max-width: 446px;
 	}
 	.formInput {
 		width: 50%;

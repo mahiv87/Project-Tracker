@@ -18,7 +18,7 @@
 }
 
 /* ANCHOR MEDIA QUERIES */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
 	.homeContainer {
 		width: 100%;
 		height: min-content; /* 3861px */
