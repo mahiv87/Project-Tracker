@@ -120,7 +120,7 @@
 }
 /* END INFO SECTION STYLES */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
 	.infoContainer {
 		box-sizing: border-box;
 		flex-shrink: 0;

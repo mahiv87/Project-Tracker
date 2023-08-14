@@ -114,7 +114,7 @@
 }
 /* END TRUSTED SECTION STYLES */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
 	.trustedContainer {
 		box-sizing: border-box;
 		flex-shrink: 0;

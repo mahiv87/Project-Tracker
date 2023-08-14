@@ -115,11 +115,12 @@
 }
 /* END TESTIMONIALS STYLES */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
 	.testimonialsContainer {
 		box-sizing: border-box;
 		/* flex-shrink: 0; */
 		width: 100%;
+		max-width: 500px;
 		height: min-content; /* 511px */
 		display: flex;
 		flex-direction: column;
