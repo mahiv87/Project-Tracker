@@ -110,6 +110,14 @@
 	border-radius: 100%;
 	border: 1px solid #000000;
 }
+
+.decorationsContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-end;
+	width: 100%;
+}
 /* END INFO SECTION STYLES */
 
 @media screen and (max-width: 600px) {
