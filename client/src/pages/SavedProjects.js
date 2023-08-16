@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { Table } from 'flowbite-react';
+import { useMutation, useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
+
 import Auth from '../utils/auth';
 import {
 	removeProjectId,
 	saveProjectIds,
 	getSavedProjectIds
 } from '../utils/localStorage';
-import { useMutation, useQuery } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
 import { SAVE_PROJECT } from '../utils/mutations';
-import { Table } from 'flowbite-react';
 import ProjectComponent from '../components/ProjectComponent';
 import dayjs from 'dayjs';
 import styles from './SavedProjects.module.css';
@@ -102,7 +103,7 @@ const SavedProjects = () => {
 		<div className={styles.savedProjectsBody}>
 			<div className="w-screen h-24">
 				<h1 className={styles.timeDate}>Current Time &amp; Date:</h1>
-				<p className="text-center text-blackText font-bold">{currentTime}</p>
+				<p className="text-center font-bold">{currentTime}</p>
 			</div>
 			<div className="container w-fit mx-auto mt-6">
 				<button onClick={() => setShowModal(true)} className={styles.button}>
@@ -118,7 +119,7 @@ const SavedProjects = () => {
 						: 'hidden'
 				}
 			>
-				<div className="relative p-4 w-full max-w-md h-full md:h-auto bg-white rounded-lg  drop-shadow-lg">
+				<div className="relative p-4 w-full max-w-md h-full md:h-auto bg-white text-blackText rounded-lg  drop-shadow-lg">
 					{/* <!-- Modal content --> */}
 					<div className="flex justify-end">
 						<button className="" onClick={() => setShowModal(false)}>
@@ -137,20 +138,20 @@ const SavedProjects = () => {
 							<div className="modal-content">
 								<form onSubmit={handleSaveProject} id="project-form">
 									<div className="modal-body">
-										<div className="relative z-0 mb-6 w-full group dark:text-white">
+										<div className="relative z-0 mb-6 w-full group ">
 											<label htmlFor="project-name-input">Project Name</label>
 											<input
 												name="projectName"
 												type="text"
 												id="project-name-input"
-												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-greenText peer"
+												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-greenText peer"
 												placeholder="Enter the project's name"
 												onChange={handleChange}
 												required
 											/>
 										</div>
 
-										<div className="relative z-0 mb-6 w-full group dark:text-white">
+										<div className="relative z-0 mb-6 w-full group ">
 											<label htmlFor="project-type-input">Project Type</label>
 											<select
 												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-white border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-greenText peer"
@@ -176,13 +177,13 @@ const SavedProjects = () => {
 											</select>
 										</div>
 
-										<div className="relative z-0 mb-6 w-full group dark:text-white">
+										<div className="relative z-0 mb-6 w-full group ">
 											<label htmlFor="hourly-rate-input">Hourly Rate ($)</label>
 											<input
 												name="rate"
 												type="number"
 												id="hourly-rate-input"
-												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-greenText peer"
+												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-greenText peer"
 												placeholder="$"
 												onChange={handleChange}
 												min="0"
@@ -190,7 +191,7 @@ const SavedProjects = () => {
 											/>
 										</div>
 
-										<div className="relative z-0 mb-6 w-full group dark:text-white">
+										<div className="relative z-0 mb-6 w-full group ">
 											<label htmlFor="due-date-input">Due Date</label>
 											<input
 												name="due"
@@ -199,7 +200,7 @@ const SavedProjects = () => {
 												type="text"
 												min="1"
 												id="due-date-input"
-												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-greenText peer"
+												className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-greenText peer"
 												placeholder="When is the project due?"
 												onChange={handleChange}
 												required
@@ -237,7 +238,7 @@ const SavedProjects = () => {
 			<div className={styles.tableContainer}>
 				<div className="container mx-auto mt-6">
 					<Table>
-						<Table.Head className={styles.projectsHead}>
+						<Table.Head className={`dark:bg-bgDark ${styles.projectsHead}`}>
 							<Table.HeadCell className="text-white text-lg">
 								Project Name
 							</Table.HeadCell>

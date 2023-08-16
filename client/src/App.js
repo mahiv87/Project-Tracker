@@ -12,6 +12,7 @@ import Navbar from './components/NavBar/NavBar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import './App.css';
+import { useTheme } from './utils/ThemeContext';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -38,10 +39,12 @@ const client = new ApolloClient({
 });
 
 function App() {
+	const { theme } = useTheme();
+
 	return (
 		<ApolloProvider client={client}>
-			<Router>
-				<>
+			<div className={`app`} data-theme={theme}>
+				<Router>
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
@@ -52,8 +55,8 @@ function App() {
 						/>
 					</Routes>
 					{/* <Footer /> */}
-				</>
-			</Router>
+				</Router>
+			</div>
 		</ApolloProvider>
 	);
 }

@@ -7,11 +7,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import BasicTabs from '../TabsComponent';
 import Auth from '../../utils/auth';
 import styles from './NavBar.module.css';
+import { useTheme } from '../../utils/ThemeContext';
+import ThemeSwitch from '../ThemeSwitch';
 
 const AppNavbar = () => {
 	// SET MODAL DISPLAY STATE
 	const [showModal, setShowModal] = useState(false);
 	const [navbarOpen, setNavbarOpen] = useState(false);
+	// const { theme, toggleTheme } = useTheme();
 	const navigate = useNavigate();
 
 	const logout = (event) => {
@@ -21,7 +24,7 @@ const AppNavbar = () => {
 	};
 
 	return (
-		<>
+		<div>
 			<nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-primary">
 				<div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
 					<div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
@@ -73,6 +76,9 @@ const AppNavbar = () => {
 										Logout
 										{/* <i className="fab fa-regular fa-user text-lg leading-lg text-white opacity-75"></i> */}
 									</Link>
+									<li>
+										<ThemeSwitch />
+									</li>
 								</li>
 							) : (
 								<div className={styles.linksContainer}>
@@ -94,6 +100,9 @@ const AppNavbar = () => {
 											</span>
 										</Link>
 									</li>
+									{/* <li>
+										<ThemeSwitch />
+									</li> */}
 								</div>
 							)}
 						</ul>
@@ -113,7 +122,7 @@ const AppNavbar = () => {
 					{/* <!-- Modal content --> */}
 					<div className="flex justify-end">
 						<button className="" onClick={() => setShowModal(false)}>
-							<i className="fa-solid fa-xmark text-neutral-500 dark:text-white hover:text-purple-900 dark:hover:text-indigo-500"></i>
+							<i className="fa-solid fa-xmark text-neutral-500  hover:text-purple-900 "></i>
 						</button>
 					</div>
 					<BasicTabs />
@@ -129,7 +138,7 @@ const AppNavbar = () => {
 					</Tabs.Group> */}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
