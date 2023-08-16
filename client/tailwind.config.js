@@ -4,6 +4,7 @@ module.exports = {
 		'./src/**/*.{js,jsx,ts,tsx}',
 		'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
 	],
+	darkMode: ['class', '[data-theme="dark"]'],
 	theme: {
 		extend: {
 			colors: {
@@ -11,7 +12,8 @@ module.exports = {
 				primary: '#073b4c',
 				secondary: '#ef476f',
 				greenText: '#06d6a0',
-				blackText: '#3f3d56'
+				blackText: '#3f3d56',
+				bgDark: '#191919'
 			},
 			fontSize: {
 				tiny: '.5rem'

@@ -7,15 +7,23 @@
 @tailwind utilities;
 
 /* Variables */
-/* :root {
-	--white: #ffffff;
-	--orange: #ff791a;
-	--green: #5bc7a5;
-} */
+[data-theme='light'] {
+	/* Light theme styles */
+	--bg-color: #f2f2f2;
+	--text-color: #3f3d56;
+}
+
+[data-theme='dark'] {
+	/* Dark theme styles */
+	--bg-color: #073b4c;
+	--text-color: #f2f2f2;
+}
 
 body {
 	/* width: 1280px; */
 	margin: 0;
+	background-color: var(--bg-color);
+	color: var(--text-color);
 	/* font-family: 'Raleway', sans-serif; */
 	/* font-family: 'Manrope', 'Manrope Placeholder', sans-serif; */
 	-webkit-font-smoothing: antialiased;

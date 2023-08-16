@@ -45,13 +45,13 @@ const LoginForm = () => {
 			{error && (
 				<div
 					id="alert-additional-content-2"
-					className="p-4 mb-4 bg-red-100 rounded-sm dark:bg-red-200"
+					className="p-4 mb-4 bg-red-100 rounded-sm "
 					role="alert"
 				>
 					<div className="flex items-center justify-center mb-3">
 						<svg
 							aria-hidden="true"
-							className="mr-2 w-5 h-5 text-red-700 dark:text-red-800"
+							className="mr-2 w-5 h-5 text-red-700 "
 							fill="currentColor"
 							viewBox="0 0 20 20"
 							xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@ const LoginForm = () => {
 							></path>
 						</svg>
 						<span className="sr-only">Info</span>
-						<h3 className="text-lg font-medium text-red-700 dark:text-red-800">
+						<h3 className="text-lg font-medium text-red-700 ">
 							Invalid credentials
 						</h3>
 					</div>
@@ -72,7 +72,7 @@ const LoginForm = () => {
 
 			{/* LOGIN FORM */}
 			{data ? (
-				<p className="dark:text-white">
+				<p className="text-blackText">
 					Success! You may now head{' '}
 					<Link to="/projects"> to the Project page.</Link>
 				</p>
@@ -83,13 +83,13 @@ const LoginForm = () => {
 							type="email"
 							name="email"
 							// id="floating_email"
-							className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+							className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
 							placeholder=" "
 							value={userFormData.email}
 							onChange={handleInputChange}
 							required
 						/>
-						<label className="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+						<label className="peer-focus:font-medium absolute text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
 							Email
 						</label>
 					</div>
@@ -98,13 +98,13 @@ const LoginForm = () => {
 							type="password"
 							name="password"
 							// id="floating_password"
-							className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+							className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
 							placeholder=" "
 							value={userFormData.password}
 							onChange={handleInputChange}
 							required
 						/>
-						<label className="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+						<label className="peer-focus:font-medium absolute text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
 							Password
 						</label>
 					</div>
